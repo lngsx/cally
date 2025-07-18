@@ -1,0 +1,1194 @@
+class re {
+  /**
+   * @type {T}
+   */
+  #t;
+  #e = /* @__PURE__ */ new Set();
+  /**
+   * @param {T} current
+   */
+  constructor(t) {
+    this.#t = t;
+  }
+  /**
+   * @return {T}
+   */
+  get current() {
+    return this.#t;
+  }
+  /**
+   * @param {T} value
+   */
+  set current(t) {
+    this.#t != t && (this.#t = t, this.#e.forEach((n) => n(t)));
+  }
+  /**
+   * @type {import("hooks").Ref["on"]}
+   */
+  on(t) {
+    return this.#e.add(t), () => this.#e.delete(t);
+  }
+}
+const At = (e) => new re(e), nt = Symbol.for("atomico.hooks");
+globalThis[nt] = globalThis[nt] || {};
+let O = globalThis[nt];
+const ae = Symbol.for("Atomico.suspense"), Rt = Symbol.for("Atomico.effect"), ce = Symbol.for("Atomico.layoutEffect"), $t = Symbol.for("Atomico.insertionEffect"), M = (e, t, n) => {
+  const { i: s, hooks: o } = O.c, r = o[s] = o[s] || {};
+  return r.value = e(r.value), r.effect = t, r.tag = n, O.c.i++, o[s].value;
+}, Ft = (e) => M((t = At(e)) => t), H = () => M((e = At(O.c.host)) => e), It = () => O.c.update, ie = (e, t, n = 0) => {
+  let s = {}, o = !1;
+  const r = () => o, a = (l, c) => {
+    for (const d in s) {
+      const f = s[d];
+      f.effect && f.tag === l && (f.value = f.effect(f.value, c));
+    }
+  };
+  return { load: (l) => {
+    O.c = { host: t, hooks: s, update: e, i: 0, id: n };
+    let c;
+    try {
+      o = !1, c = l();
+    } catch (d) {
+      if (d !== ae) throw d;
+      o = !0;
+    } finally {
+      O.c = null;
+    }
+    return c;
+  }, cleanEffects: (l) => (a($t, l), () => (a(ce, l), () => {
+    a(Rt, l);
+  })), isSuspense: r };
+}, L = Symbol.for;
+function Ut(e, t) {
+  const n = e.length;
+  if (n !== t.length) return !1;
+  for (let s = 0; s < n; s++) {
+    let o = e[s], r = t[s];
+    if (o !== r) return !1;
+  }
+  return !0;
+}
+const w = (e) => typeof e == "function", R = (e) => typeof e == "object", { isArray: le } = Array, st = (e, t) => (t ? e instanceof HTMLStyleElement : !0) && "hydrate" in (e?.dataset || {});
+function Lt(e, t) {
+  let n;
+  const s = (o) => {
+    let { length: r } = o;
+    for (let a = 0; a < r; a++) {
+      const u = o[a];
+      if (u && Array.isArray(u))
+        s(u);
+      else {
+        const i = typeof u;
+        if (u == null || i === "function" || i === "boolean")
+          continue;
+        i === "string" || i === "number" ? (n == null && (n = ""), n += u) : (n != null && (t(n), n = null), t(u));
+      }
+    }
+  };
+  s(e), n != null && t(n);
+}
+const _t = (e, t, n) => (e.addEventListener(t, n), () => e.removeEventListener(t, n));
+class jt {
+  /**
+   *
+   * @param {HTMLElement} target
+   * @param {string} message
+   * @param {string} value
+   */
+  constructor(t, n, s) {
+    this.message = n, this.target = t, this.value = s;
+  }
+}
+class Yt extends jt {
+}
+class ue extends jt {
+}
+const q = "Custom", fe = null, de = { true: 1, "": 1, 1: 1 };
+function he(e, t, n, s, o) {
+  const {
+    type: r,
+    reflect: a,
+    event: u,
+    value: i,
+    attr: l = me(t)
+  } = n?.name != q && R(n) && n != fe ? n : { type: n }, c = r?.name === q && r.map, d = i != null ? r == Function || !w(i) ? () => i : i : null;
+  Object.defineProperty(e, t, {
+    configurable: !0,
+    /**
+     * @this {import("dom").AtomicoThisInternal}
+     * @param {any} newValue
+     */
+    set(f) {
+      const m = this[t];
+      d && r != Boolean && f == null && (f = d());
+      const { error: E, value: D } = (c ? ge : be)(
+        r,
+        f
+      );
+      if (E && D != null)
+        throw new Yt(
+          this,
+          `The value defined for prop '${t}' must be of type '${r.name}'`,
+          D
+        );
+      m != D && (this._props[t] = D ?? void 0, this.update(), u && Bt(this, u), this.updated.then(() => {
+        a && (this._ignoreAttr = l, ye(this, r, l, this[t]), this._ignoreAttr = null);
+      }));
+    },
+    /**
+     * @this {import("dom").AtomicoThisInternal}
+     */
+    get() {
+      return this._props[t];
+    }
+  }), d && (o[t] = d()), s[l] = { prop: t, type: r };
+}
+const Bt = (e, { type: t, base: n = CustomEvent, ...s }) => e.dispatchEvent(new n(t, s)), me = (e) => e.replace(/([A-Z])/g, "-$1").toLowerCase(), ye = (e, t, n, s) => s == null || t == Boolean && !s ? e.removeAttribute(n) : e.setAttribute(
+  n,
+  t?.name === q && t?.serialize ? t?.serialize(s) : R(s) ? JSON.stringify(s) : t == Boolean ? "" : s
+), pe = (e, t) => e == Boolean ? !!de[t] : e == Number ? Number(t) : e == String ? t : e == Array || e == Object ? JSON.parse(t) : e.name == q ? t : (
+  // TODO: If when defining reflect the prop can also be of type string?
+  new e(t)
+), ge = ({ map: e }, t) => {
+  try {
+    return { value: e(t), error: !1 };
+  } catch {
+    return { value: t, error: !0 };
+  }
+}, be = (e, t) => e == null || t == null ? { value: t, error: !1 } : e != String && t === "" ? { value: void 0, error: !1 } : e == Object || e == Array || e == Symbol ? {
+  value: t,
+  error: {}.toString.call(t) !== `[object ${e.name}]`
+} : t instanceof e ? {
+  value: t,
+  error: e == Number && Number.isNaN(t.valueOf())
+} : e == String || e == Number || e == Boolean ? {
+  value: t,
+  error: e == Number ? typeof t != "number" ? !0 : Number.isNaN(t) : e == String ? typeof t != "string" : typeof t != "boolean"
+} : { value: t, error: !0 };
+let De = 0;
+const Ee = (e) => {
+  const t = (e?.dataset || {})?.hydrate || "";
+  return t || "c" + De++;
+}, _ = (e, t = HTMLElement) => {
+  const n = {}, s = {}, o = "prototype" in t && t.prototype instanceof Element, r = o ? t : "base" in t ? t.base : HTMLElement, { props: a, styles: u } = o ? e : t;
+  class i extends r {
+    constructor() {
+      super(), this._setup(), this._render = () => e({ ...this._props });
+      for (const c in s) this[c] = s[c];
+    }
+    /**
+     * @returns {import("core").Sheets[]}
+     */
+    static get styles() {
+      return [super.styles, u];
+    }
+    async _setup() {
+      if (this._props) return;
+      this._props = {};
+      let c, d;
+      this.mounted = new Promise(
+        (y) => this.mount = () => {
+          y(), c != this.parentNode && (d != c ? this.unmounted.then(this.update) : this.update()), c = this.parentNode;
+        }
+      ), this.unmounted = new Promise(
+        (y) => this.unmount = () => {
+          y(), (c != this.parentNode || !this.isConnected) && (f.cleanEffects(!0)()(), d = this.parentNode, c = null);
+        }
+      ), this.symbolId = this.symbolId || Symbol(), this.symbolIdParent = Symbol();
+      const f = ie(
+        () => this.update(),
+        this,
+        Ee(this)
+      );
+      let m, E = !0;
+      const D = st(this);
+      this.update = () => (m || (m = !0, this.updated = (this.updated || this.mounted).then(() => {
+        try {
+          const y = f.load(this._render), h = f.cleanEffects();
+          return y && //@ts-ignore
+          y.render(this, this.symbolId, D), m = !1, E && !f.isSuspense() && (E = !1, !D && Se(this)), h();
+        } finally {
+          m = !1;
+        }
+      }).then(
+        /**
+         * @param {import("internal/hooks.js").CleanUseEffects} [cleanUseEffect]
+         */
+        (y) => {
+          y && y();
+        }
+      )), this.updated), this.update();
+    }
+    connectedCallback() {
+      this.mount(), super.connectedCallback && super.connectedCallback();
+    }
+    disconnectedCallback() {
+      super.disconnectedCallback && super.disconnectedCallback(), this.unmount();
+    }
+    /**
+     * @this {import("dom").AtomicoThisInternal}
+     * @param {string} attr
+     * @param {(string|null)} oldValue
+     * @param {(string|null)} value
+     */
+    attributeChangedCallback(c, d, f) {
+      if (n[c]) {
+        if (c === this._ignoreAttr || d === f) return;
+        const { prop: m, type: E } = n[c];
+        try {
+          this[m] = pe(E, f);
+        } catch {
+          throw new ue(
+            this,
+            `The value defined as attr '${c}' cannot be parsed by type '${E.name}'`,
+            f
+          );
+        }
+      } else
+        super.attributeChangedCallback(c, d, f);
+    }
+    static get props() {
+      return { ...super.props, ...a };
+    }
+    static get observedAttributes() {
+      const c = super.observedAttributes || [];
+      for (const d in a)
+        he(this.prototype, d, a[d], n, s);
+      return Object.keys(n).concat(c);
+    }
+  }
+  return i;
+};
+function Se(e) {
+  const { styles: t } = e.constructor, { shadowRoot: n } = e;
+  if (n && t.length) {
+    const s = [];
+    Lt(t, (o) => {
+      o && (o instanceof Element ? n.appendChild(o.cloneNode(!0)) : s.push(o));
+    }), s.length && (n.adoptedStyleSheets = s);
+  }
+}
+const qt = (e) => (t, n) => {
+  M(
+    /**
+     * Clean the effect hook
+     * @type {import("internal/hooks.js").CollectorEffect}
+     */
+    ([s, o] = []) => ((o || !o) && (o && Ut(o, n) ? s = s || !0 : (w(s) && s(), s = null)), [s, n]),
+    /**
+     * @returns {any}
+     */
+    ([s, o], r) => r ? (w(s) && s(), []) : [s || t(), o],
+    e
+  );
+}, I = qt(Rt), Te = qt($t);
+class zt extends Array {
+  /**
+   *
+   * @param {any} initialState
+   * @param {(nextState: any, state:any[], mount: boolean )=>void} mapState
+   */
+  constructor(t, n) {
+    let s = !0;
+    const o = (r) => {
+      try {
+        n(r, this, s);
+      } finally {
+        s = !1;
+      }
+    };
+    super(void 0, o, n), o(t);
+  }
+  /**
+   * The following code allows a mutable approach to useState
+   * and useProp this with the idea of allowing an alternative
+   * approach similar to Vue or Qwik of state management
+   * @todo pending review with the community
+   */
+  // get value() {
+  //     return this[0];
+  // }
+  // set value(nextState) {
+  //     this[2](nextState, this);
+  // }
+}
+const ct = (e) => {
+  const t = It();
+  return M(
+    (n = new zt(e, (s, o, r) => {
+      s = w(s) ? s(o[0]) : s, s !== o[0] && (o[0] = s, r || t());
+    })) => n
+  );
+}, C = (e, t) => {
+  const [n] = M(([s, o, r = 0] = []) => ((!o || o && !Ut(o, t)) && (s = e()), [s, t, r]));
+  return n;
+}, it = (e) => {
+  const { current: t } = H();
+  if (!(e in t))
+    throw new Yt(
+      t,
+      `For useProp("${e}"), the prop does not exist on the host.`,
+      e
+    );
+  return M(
+    (n = new zt(t[e], (s, o) => {
+      s = w(s) ? s(t[e]) : s, t[e] = s;
+    })) => (n[0] = t[e], n)
+  );
+}, N = (e, t = {}) => {
+  const n = H();
+  return n[e] || (n[e] = (s = t.detail) => Bt(n.current, {
+    type: e,
+    ...t,
+    detail: s
+  })), n[e];
+}, ot = L("atomico/options");
+globalThis[ot] = globalThis[ot] || {
+  sheet: !!document.adoptedStyleSheets
+};
+const x = globalThis[ot], ve = new Promise((e) => {
+  x.ssr || (document.readyState === "loading" ? _t(document, "DOMContentLoaded", e) : e());
+}), we = {
+  checked: 1,
+  value: 1,
+  selected: 1
+}, Ce = {
+  list: 1,
+  type: 1,
+  size: 1,
+  form: 1,
+  width: 1,
+  height: 1,
+  src: 1,
+  href: 1,
+  slot: 1
+}, Pe = {
+  shadowDom: 1,
+  staticNode: 1,
+  cloneNode: 1,
+  children: 1,
+  key: 1
+}, B = {}, rt = [];
+class at extends Text {
+}
+const Ne = L("atomico/id"), $ = L("atomico/type"), G = L("atomico/ref"), Ht = L("atomico/vnode"), ke = () => {
+};
+function Oe(e, t, n) {
+  return Kt(this, e, t, n);
+}
+const xt = (e, t, ...n) => {
+  const s = t || B;
+  let { children: o } = s;
+  if (o = o ?? (n.length ? n : rt), e === ke)
+    return o;
+  const r = e ? e instanceof Node ? 1 : (
+    //@ts-ignore
+    e.prototype instanceof HTMLElement && 2
+  ) : 0;
+  if (r === !1 && e instanceof Function)
+    return e(
+      o != rt ? { children: o, ...s } : s
+    );
+  const a = x.render || Oe;
+  return {
+    [$]: Ht,
+    type: e,
+    props: s,
+    children: o,
+    key: s.key,
+    // key for lists by keys
+    // define if the node declares its shadowDom
+    shadow: s.shadowDom,
+    // allows renderings to run only once
+    static: s.staticNode,
+    // defines whether the type is a childNode `1` or a constructor `2`
+    raw: r,
+    // defines whether to use the second parameter for document.createElement
+    is: s.is,
+    // clone the node if it comes from a reference
+    clone: s.cloneNode,
+    render: a
+  };
+};
+function Kt(e, t, n = Ne, s, o) {
+  let r;
+  if (t && t[n] && t[n].vnode == e || e[$] != Ht)
+    return t;
+  (e || !t) && (o = o || e.type == "svg", r = e.type != "host" && (e.raw == 1 ? (t && e.clone ? t[G] : t) != e.type : e.raw == 2 ? !(t instanceof e.type) : t ? t[G] || t.localName != e.type : !t), r && e.type != null && (e.raw == 1 && e.clone ? (s = !0, t = e.type.cloneNode(!0), t[G] = e.type) : t = e.raw == 1 ? e.type : e.raw == 2 ? new e.type() : o ? document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    e.type
+  ) : document.createElement(
+    e.type,
+    e.is ? { is: e.is } : void 0
+  )));
+  const a = t[n] ? t[n] : B, { vnode: u = B, cycle: i = 0 } = a;
+  let { fragment: l, handlers: c } = a;
+  const { children: d = rt, props: f = B } = u;
+  if (c = r ? {} : c || {}, e.static && !r) return t;
+  if (e.shadow && !t.shadowRoot && // @ts-ignore
+  t.attachShadow({ mode: "open", ...e.shadow }), e.props != f && Re(t, f, e.props, c, o), e.children !== d) {
+    const m = e.shadow ? t.shadowRoot : t;
+    l = Ae(
+      e.children,
+      /**
+       * @todo for hydration use attribute and send childNodes
+       */
+      l,
+      m,
+      n,
+      // add support to foreignObject, children will escape from svg
+      !i && s,
+      o && e.type == "foreignObject" ? !1 : o
+    );
+  }
+  return t[n] = { vnode: e, handlers: c, fragment: l, cycle: i + 1 }, t;
+}
+function Me(e, t) {
+  const n = new at(""), s = new at("");
+  let o;
+  if (e[t ? "prepend" : "append"](n), t) {
+    let { lastElementChild: r } = e;
+    for (; r; ) {
+      const { previousElementSibling: a } = r;
+      if (st(r, !0) && !st(a, !0)) {
+        o = r;
+        break;
+      }
+      r = a;
+    }
+  }
+  return o ? o.before(s) : e.append(s), {
+    markStart: n,
+    markEnd: s
+  };
+}
+function Ae(e, t, n, s, o, r) {
+  e = e == null ? null : le(e) ? e : [e];
+  const a = t || Me(n, o), { markStart: u, markEnd: i, keyes: l } = a;
+  let c;
+  const d = l && /* @__PURE__ */ new Set();
+  let f = u;
+  if (e && Lt(e, (m) => {
+    if (typeof m == "object" && !m[$])
+      return;
+    const E = m[$] && m.key, D = l && E != null && l.get(E);
+    f != i && f === D ? d.delete(f) : f = f == i ? i : f.nextSibling;
+    const y = l ? D : f;
+    let h = y;
+    if (m[$])
+      h = Kt(m, y, s, o, r);
+    else {
+      const T = m + "";
+      !(h instanceof Text) || h instanceof at ? h = new Text(T) : h.data != T && (h.data = T);
+    }
+    h != f && (l && d.delete(h), !y || l ? (n.insertBefore(h, f), l && f != i && d.add(f)) : y == i ? n.insertBefore(h, i) : (n.replaceChild(h, y), f = h)), E != null && (c = c || /* @__PURE__ */ new Map(), c.set(E, h));
+  }), f = f == i ? i : f.nextSibling, t && f != i)
+    for (; f != i; ) {
+      const m = f;
+      f = f.nextSibling, m.remove();
+    }
+  return d && d.forEach((m) => m.remove()), a.keyes = c, a;
+}
+function Re(e, t, n, s, o) {
+  for (const r in t)
+    !(r in n) && Tt(e, r, t[r], null, o, s);
+  for (const r in n)
+    Tt(e, r, t[r], n[r], o, s);
+}
+function Tt(e, t, n, s, o, r) {
+  if (t = t == "class" && !o ? "className" : t, n = n ?? null, s = s ?? null, t in e && we[t] && (n = e[t]), !(s === n || Pe[t] || t[0] == "_"))
+    if (e.localName === "slot" && t === "assignNode" && "assign" in e)
+      e.assign(s);
+    else if (t[0] == "o" && t[1] == "n" && (w(s) || w(n)))
+      $e(e, t.slice(2), s, r);
+    else if (t == "ref")
+      s && (w(s) ? s(e) : s.current = e);
+    else if (t == "style") {
+      const { style: a } = e;
+      n = n || "", s = s || "";
+      const u = R(n), i = R(s);
+      if (u)
+        for (const l in n)
+          if (i)
+            !(l in s) && vt(a, l, null);
+          else
+            break;
+      if (i)
+        for (const l in s) {
+          const c = s[l];
+          u && n[l] === c || vt(a, l, c);
+        }
+      else
+        a.cssText = s;
+    } else {
+      const a = t[0] == "$" ? t.slice(1) : t;
+      a === t && (!o && !Ce[t] && t in e || w(s) || w(n)) ? e[t] = s ?? "" : s == null ? e.removeAttribute(a) : e.setAttribute(
+        a,
+        R(s) ? JSON.stringify(s) : s
+      );
+    }
+}
+function $e(e, t, n, s) {
+  if (s.handleEvent || (s.handleEvent = (o) => s[o.type].call(e, o)), n) {
+    if (!s[t]) {
+      const o = n.capture || n.once || n.passive ? Object.assign({}, n) : null;
+      e.addEventListener(t, s, o);
+    }
+    s[t] = n;
+  } else
+    s[t] && (e.removeEventListener(t, s), delete s[t]);
+}
+function vt(e, t, n) {
+  let s = "setProperty";
+  n == null && (s = "removeProperty", n = null), ~t.indexOf("-") ? e[s](t, n) : e[t] = n;
+}
+const Fe = xt("host", { style: "display: contents" }), Wt = "value", Ie = (e, t) => {
+  const n = H(), s = Ft();
+  Te(
+    () => _t(
+      n.current,
+      "ConnectContext",
+      /**
+       * @param {CustomEvent<import("context").DetailConnectContext>} event
+       */
+      (o) => {
+        o.composedPath().at(0) !== o.currentTarget && e === o.detail.id && (o.stopPropagation(), o.detail.connect(s));
+      }
+    ),
+    [e]
+  ), s.current = t;
+}, Ue = (e) => {
+  const t = N("ConnectContext", {
+    bubbles: !0,
+    composed: !0
+  }), [n, s] = ct(() => {
+    if (x.ssr) return;
+    let r;
+    return t({
+      id: e,
+      /**
+       * @param {import("core").Ref} parentContext
+       */
+      connect(a) {
+        r = a;
+      }
+    }), r;
+  }), o = It();
+  return I(() => {
+    ve.then(
+      () => t({
+        id: e,
+        connect: s
+      })
+    );
+  }, [e]), I(() => {
+    if (n)
+      return n.on(o);
+  }, [n]), n?.current || e[Wt];
+}, Jt = (e) => {
+  const t = _(
+    ({ value: n }) => (Ie(t, n), Fe),
+    {
+      props: {
+        value: {
+          type: Object,
+          value: () => e
+        }
+      }
+    }
+  );
+  return t[Wt] = e, t;
+};
+Jt({
+  /**
+   *
+   * @param {string} type
+   * @param {string} id
+   */
+  dispatch(e, t) {
+  }
+});
+const wt = {};
+function K(e, ...t) {
+  const n = (e.raw || e).reduce(
+    (s, o, r) => s + o + (t[r] || ""),
+    ""
+  );
+  return wt[n] = wt[n] || Le(n);
+}
+function Le(e) {
+  if (x.sheet) {
+    const t = new CSSStyleSheet();
+    return t.replaceSync(e), t;
+  } else {
+    const t = document.createElement("style");
+    return t.textContent = e, t;
+  }
+}
+const p = (e, t, n) => (t == null ? t = { key: n } : t.key = n, xt(e, t)), F = p, Zt = K`*,*:before,*:after{box-sizing:border-box}button{padding:0;touch-action:manipulation;cursor:pointer;user-select:none}`, Xt = K`.vh{position:absolute;transform:scale(0)}`;
+function lt() {
+  const e = /* @__PURE__ */ new Date();
+  return new b(e.getFullYear(), e.getMonth() + 1, e.getDate());
+}
+function ut(e, t = 0) {
+  const n = v(e), s = n.getUTCDay(), o = (s < t ? 7 : 0) + s - t;
+  return n.setUTCDate(n.getUTCDate() - o), b.from(n);
+}
+function Gt(e, t = 0) {
+  return ut(e, t).add({ days: 6 });
+}
+function Qt(e) {
+  return b.from(new Date(Date.UTC(e.year, e.month, 0)));
+}
+function W(e, t, n) {
+  return t && b.compare(e, t) < 0 ? t : n && b.compare(e, n) > 0 ? n : e;
+}
+const _e = { days: 1 };
+function je(e, t = 0) {
+  let n = ut(e.toPlainDate(), t);
+  const s = Gt(Qt(e), t), o = [];
+  for (; b.compare(n, s) < 0; ) {
+    const r = [];
+    for (let a = 0; a < 7; a++)
+      r.push(n), n = n.add(_e);
+    o.push(r);
+  }
+  return o;
+}
+function v(e) {
+  return new Date(Date.UTC(e.year, e.month - 1, e.day ?? 1));
+}
+function Ye(e, t, n) {
+  const s = b.compare(t, e) <= 0 && b.compare(e, n) <= 0, o = b.compare(n, e) <= 0 && b.compare(e, t) <= 0;
+  return s || o;
+}
+const Be = /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[0-1])$/, Q = (e, t) => e.toString().padStart(t, "0");
+class b {
+  constructor(t, n, s) {
+    this.year = t, this.month = n, this.day = s;
+  }
+  // this is an incomplete implementation that only handles arithmetic on a single unit at a time.
+  // i didn't want to get into more complex arithmetic since it get tricky fast
+  // this is enough to serve my needs and will still be a drop-in replacement when actual Temporal API lands
+  add(t) {
+    const n = v(this);
+    if ("days" in t)
+      return n.setUTCDate(this.day + t.days), b.from(n);
+    let { year: s, month: o } = this;
+    "months" in t ? (o = this.month + t.months, n.setUTCMonth(o - 1)) : (s = this.year + t.years, n.setUTCFullYear(s));
+    const r = b.from(v({ year: s, month: o, day: 1 }));
+    return W(b.from(n), r, Qt(r));
+  }
+  toString() {
+    return `${Q(this.year, 4)}-${Q(this.month, 2)}-${Q(this.day, 2)}`;
+  }
+  toPlainYearMonth() {
+    return new J(this.year, this.month);
+  }
+  equals(t) {
+    return b.compare(this, t) === 0;
+  }
+  static compare(t, n) {
+    return t.year < n.year ? -1 : t.year > n.year ? 1 : t.month < n.month ? -1 : t.month > n.month ? 1 : t.day < n.day ? -1 : t.day > n.day ? 1 : 0;
+  }
+  static from(t) {
+    if (typeof t == "string") {
+      const n = t.match(Be);
+      if (!n)
+        throw new TypeError(t);
+      const [, s, o, r] = n;
+      return new b(
+        parseInt(s, 10),
+        parseInt(o, 10),
+        parseInt(r, 10)
+      );
+    }
+    return new b(
+      t.getUTCFullYear(),
+      t.getUTCMonth() + 1,
+      t.getUTCDate()
+    );
+  }
+}
+class J {
+  constructor(t, n) {
+    this.year = t, this.month = n;
+  }
+  add(t) {
+    const n = v(this), s = (t.months ?? 0) + (t.years ?? 0) * 12;
+    return n.setUTCMonth(n.getUTCMonth() + s), new J(n.getUTCFullYear(), n.getUTCMonth() + 1);
+  }
+  equals(t) {
+    return this.year === t.year && this.month === t.month;
+  }
+  toPlainDate() {
+    return new b(this.year, this.month, 1);
+  }
+}
+function z(e, t) {
+  if (t)
+    try {
+      return e.from(t);
+    } catch {
+    }
+}
+function P(e) {
+  const [t, n] = it(e);
+  return [C(() => z(b, t), [t]), (r) => n(r?.toString())];
+}
+function qe(e) {
+  const [t = "", n] = it(e);
+  return [C(() => {
+    const [r, a] = t.split("/"), u = z(b, r), i = z(b, a);
+    return u && i ? [u, i] : [];
+  }, [t]), (r) => n(`${r[0]}/${r[1]}`)];
+}
+function ze(e) {
+  const [t = "", n] = it(e);
+  return [C(() => {
+    const r = [];
+    for (const a of t.trim().split(/\s+/)) {
+      const u = z(b, a);
+      u && r.push(u);
+    }
+    return r;
+  }, [t]), (r) => n(r.join(" "))];
+}
+function U(e, t) {
+  return C(
+    () => new Intl.DateTimeFormat(t, { timeZone: "UTC", ...e }),
+    [t, e]
+  );
+}
+function Ct(e, t, n) {
+  const s = U(e, n);
+  return C(() => {
+    const o = [], r = /* @__PURE__ */ new Date();
+    for (var a = 0; a < 7; a++) {
+      const u = (r.getUTCDay() - t + 7) % 7;
+      o[u] = s.format(r), r.setUTCDate(r.getUTCDate() + 1);
+    }
+    return o;
+  }, [t, s]);
+}
+const Pt = (e, t, n) => W(e, t, n) === e, Nt = (e) => e.target.matches(":dir(ltr)"), He = { month: "long", day: "numeric" }, xe = { month: "long" }, Ke = { weekday: "long" }, V = { bubbles: !0 };
+function We({ props: e, context: t }) {
+  const { offset: n } = e, {
+    firstDayOfWeek: s,
+    isDateDisallowed: o,
+    min: r,
+    max: a,
+    today: u,
+    page: i,
+    locale: l,
+    focusedDate: c,
+    formatWeekday: d
+  } = t, f = u ?? lt(), m = Ct(Ke, s, l), E = C(
+    () => ({ weekday: d }),
+    [d]
+  ), D = Ct(E, s, l), y = U(He, l), h = U(xe, l), T = C(
+    () => i.start.add({ months: n }),
+    [i, n]
+  ), Z = C(
+    () => je(T, s),
+    [T, s]
+  ), Vt = N("focusday", V), te = N("selectday", V), ee = N("hoverday", V);
+  function pt(g) {
+    Vt(W(g, r, a));
+  }
+  function ne(g) {
+    let S;
+    switch (g.key) {
+      case "ArrowRight":
+        S = c.add({ days: Nt(g) ? 1 : -1 });
+        break;
+      case "ArrowLeft":
+        S = c.add({ days: Nt(g) ? -1 : 1 });
+        break;
+      case "ArrowDown":
+        S = c.add({ days: 7 });
+        break;
+      case "ArrowUp":
+        S = c.add({ days: -7 });
+        break;
+      case "PageUp":
+        S = c.add(g.shiftKey ? { years: -1 } : { months: -1 });
+        break;
+      case "PageDown":
+        S = c.add(g.shiftKey ? { years: 1 } : { months: 1 });
+        break;
+      case "Home":
+        S = ut(c, s);
+        break;
+      case "End":
+        S = Gt(c, s);
+        break;
+      default:
+        return;
+    }
+    pt(S), g.preventDefault();
+  }
+  function se(g) {
+    const S = T.equals(g);
+    if (!t.showOutsideDays && !S)
+      return;
+    const oe = g.equals(c), gt = g.equals(f), j = v(g), Y = o?.(j), bt = !Pt(g, r, a);
+    let Dt = "", k;
+    if (t.type === "range") {
+      const [A, X] = t.value, Et = A?.equals(g), St = X?.equals(g);
+      k = A && X && Pt(g, A, X), Dt = `${Et ? "range-start" : ""} ${St ? "range-end" : ""} ${k && !Et && !St ? "range-inner" : ""}`;
+    } else t.type === "multi" ? k = t.value.some((A) => A.equals(g)) : (k = t.value?.equals(g), t.type === "date" && t.markToDate && t.value && Ye(g, t.value, t.markToDate) && (k = !0));
+    return {
+      part: `${`button day day-${j.getDay()} ${// we don't want outside days to ever be shown as selected
+      S ? k ? "selected" : "" : "outside"} ${Y ? "disallowed" : ""} ${gt ? "today" : ""} ${t.getDayParts?.(j) ?? ""}`} ${Dt}`,
+      tabindex: S && oe ? 0 : -1,
+      disabled: bt,
+      "aria-disabled": Y ? "true" : void 0,
+      "aria-pressed": S && k,
+      "aria-current": gt ? "date" : void 0,
+      "aria-label": y.format(j),
+      onkeydown: ne,
+      onclick() {
+        Y || te(g), pt(g);
+      },
+      onmouseover() {
+        !Y && !bt && ee(g);
+      }
+    };
+  }
+  return {
+    weeks: Z,
+    yearMonth: T,
+    daysLong: m,
+    daysVisible: D,
+    formatter: h,
+    getDayProps: se
+  };
+}
+const tt = lt(), ft = Jt({
+  type: "date",
+  firstDayOfWeek: 1,
+  focusedDate: tt,
+  page: { start: tt.toPlainYearMonth(), end: tt.toPlainYearMonth() }
+});
+customElements.define("calendar-ctx", ft);
+const Je = (e, t) => (t + e) % 7, Ze = _(
+  (e) => {
+    const t = Ue(ft), n = Ft(), s = We({ props: e, context: t });
+    function o() {
+      n.current.querySelector("button[tabindex='0']")?.focus();
+    }
+    return /* @__PURE__ */ F("host", { shadowDom: !0, focus: o, children: [
+      /* @__PURE__ */ p("div", { id: "h", part: "heading", children: s.formatter.format(v(s.yearMonth)) }),
+      /* @__PURE__ */ F("table", { ref: n, "aria-labelledby": "h", part: "table", children: [
+        /* @__PURE__ */ p("thead", { children: /* @__PURE__ */ p("tr", { part: "tr head", children: s.daysLong.map((r, a) => /* @__PURE__ */ F(
+          "th",
+          {
+            part: `th day day-${Je(t.firstDayOfWeek, a)}`,
+            scope: "col",
+            children: [
+              /* @__PURE__ */ p("span", { class: "vh", children: r }),
+              /* @__PURE__ */ p("span", { "aria-hidden": "true", children: s.daysVisible[a] })
+            ]
+          }
+        )) }) }),
+        /* @__PURE__ */ p("tbody", { children: s.weeks.map((r, a) => /* @__PURE__ */ p("tr", { part: "tr week", children: r.map((u, i) => {
+          const l = s.getDayProps(u);
+          return /* @__PURE__ */ p("td", { part: "td", children: l && /* @__PURE__ */ p("button", { ...l, children: u.day }) }, i);
+        }) }, a)) })
+      ] })
+    ] });
+  },
+  {
+    props: {
+      offset: {
+        type: Number,
+        value: 0
+      }
+    },
+    styles: [
+      Zt,
+      Xt,
+      K`:host{--color-accent: black;--color-text-on-accent: white;display:flex;flex-direction:column;gap:.25rem;text-align:center;inline-size:fit-content}table{border-collapse:collapse;font-size:.875rem}th{font-weight:700;block-size:2.25rem}td{padding-inline:0}button{color:inherit;font-size:inherit;background:transparent;border:0;font-variant-numeric:tabular-nums;block-size:2.25rem;inline-size:2.25rem}button:hover:where(:not(:disabled,[aria-disabled])){background:#0000000d}button:is([aria-pressed=true],:focus-visible){background:var(--color-accent);color:var(--color-text-on-accent)}button:focus-visible{outline:1px solid var(--color-text-on-accent);outline-offset:-2px}button:disabled,:host::part(outside),:host::part(disallowed){cursor:default;opacity:.5}`
+    ]
+  }
+);
+customElements.define("calendar-month", Ze);
+function kt(e) {
+  return /* @__PURE__ */ p(
+    "button",
+    {
+      part: `button ${e.name} ${e.onclick ? "" : "disabled"}`,
+      onclick: e.onclick,
+      "aria-disabled": e.onclick ? null : "true",
+      children: /* @__PURE__ */ p("slot", { name: e.name, children: e.children })
+    }
+  );
+}
+function dt(e) {
+  const t = v(e.page.start), n = v(e.page.end);
+  return /* @__PURE__ */ F("div", { role: "group", "aria-labelledby": "h", part: "container", children: [
+    /* @__PURE__ */ p("div", { id: "h", class: "vh", "aria-live": "polite", "aria-atomic": "true", children: e.formatVerbose.formatRange(t, n) }),
+    /* @__PURE__ */ F("div", { part: "header", children: [
+      /* @__PURE__ */ p(kt, { name: "previous", onclick: e.previous, children: "Previous" }),
+      /* @__PURE__ */ p("slot", { part: "heading", name: "heading", children: /* @__PURE__ */ p("div", { "aria-hidden": "true", children: e.format.formatRange(t, n) }) }),
+      /* @__PURE__ */ p(kt, { name: "next", onclick: e.next, children: "Next" })
+    ] }),
+    /* @__PURE__ */ p(
+      ft,
+      {
+        value: e,
+        onselectday: e.onSelect,
+        onfocusday: e.onFocus,
+        onhoverday: e.onHover,
+        children: /* @__PURE__ */ p("slot", {})
+      }
+    )
+  ] });
+}
+const ht = {
+  value: {
+    type: String,
+    value: ""
+  },
+  min: {
+    type: String,
+    value: ""
+  },
+  max: {
+    type: String,
+    value: ""
+  },
+  today: {
+    type: String,
+    value: ""
+  },
+  isDateDisallowed: {
+    type: Function,
+    value: (e) => !1
+  },
+  formatWeekday: {
+    type: String,
+    value: () => "narrow"
+  },
+  getDayParts: {
+    type: Function,
+    value: (e) => ""
+  },
+  firstDayOfWeek: {
+    type: Number,
+    value: () => 1
+  },
+  showOutsideDays: {
+    type: Boolean,
+    value: !1
+  },
+  locale: {
+    type: String,
+    value: () => {
+    }
+  },
+  months: {
+    type: Number,
+    value: 1
+  },
+  focusedDate: {
+    type: String,
+    value: () => {
+    }
+  },
+  pageBy: {
+    type: String,
+    value: () => "months"
+  },
+  markToDate: {
+    type: String,
+    value: ""
+  }
+}, mt = [
+  Zt,
+  Xt,
+  K`:host{display:block;inline-size:fit-content}[role=group]{display:flex;flex-direction:column;gap:1em}:host::part(header){display:flex;align-items:center;justify-content:space-between}:host::part(heading){font-weight:700;font-size:1.25em}button{display:flex;align-items:center;justify-content:center}button[aria-disabled]{cursor:default;opacity:.5}`
+], Xe = { year: "numeric" }, Ge = { year: "numeric", month: "long" };
+function et(e, t) {
+  return (t.year - e.year) * 12 + t.month - e.month;
+}
+const Ot = (e, t) => (e = t === 12 ? new J(e.year, 1) : e, {
+  start: e,
+  end: e.add({ months: t - 1 })
+});
+function Qe({
+  pageBy: e,
+  focusedDate: t,
+  months: n,
+  max: s,
+  min: o,
+  goto: r
+}) {
+  const a = e === "single" ? 1 : n, [u, i] = ct(
+    () => Ot(t.toPlainYearMonth(), n)
+  ), l = (d) => i(Ot(u.start.add({ months: d }), n)), c = (d) => {
+    const f = et(u.start, d.toPlainYearMonth());
+    return f >= 0 && f < n;
+  };
+  return I(() => {
+    if (c(t))
+      return;
+    const d = et(t.toPlainYearMonth(), u.start);
+    r(t.add({ months: d }));
+  }, [u.start]), I(() => {
+    if (c(t))
+      return;
+    const d = et(u.start, t.toPlainYearMonth());
+    l(d === -1 ? -a : d === n ? a : Math.floor(d / n) * n);
+  }, [t, a, n]), {
+    page: u,
+    previous: !o || !c(o) ? () => l(-a) : void 0,
+    next: !s || !c(s) ? () => l(a) : void 0
+  };
+}
+function yt({
+  months: e,
+  pageBy: t,
+  locale: n,
+  focusedDate: s,
+  setFocusedDate: o
+}) {
+  const [r] = P("min"), [a] = P("max"), [u] = P("today"), i = N("focusday"), l = N("change"), c = C(
+    () => W(s ?? u ?? lt(), r, a),
+    [s, u, r, a]
+  );
+  function d(h) {
+    o(h), i(v(h));
+  }
+  const { next: f, previous: m, page: E } = Qe({
+    pageBy: t,
+    focusedDate: c,
+    months: e,
+    min: r,
+    max: a,
+    goto: d
+  }), D = H();
+  function y(h) {
+    const T = h?.target ?? "day";
+    T === "day" ? D.current.querySelectorAll("calendar-month").forEach((Z) => Z.focus(h)) : D.current.shadowRoot.querySelector(`[part~='${T}']`).focus(h);
+  }
+  return {
+    format: U(Xe, n),
+    formatVerbose: U(Ge, n),
+    page: E,
+    focusedDate: c,
+    dispatch: l,
+    onFocus(h) {
+      h.stopPropagation(), d(h.detail), setTimeout(y);
+    },
+    min: r,
+    max: a,
+    today: u,
+    next: f,
+    previous: m,
+    focus: y
+  };
+}
+const Ve = _(
+  (e) => {
+    const [t, n] = P("value"), [s = t, o] = P("focusedDate"), [r] = P("markToDate"), a = yt({
+      ...e,
+      focusedDate: s,
+      setFocusedDate: o
+    });
+    function u(i) {
+      n(i.detail), a.dispatch();
+    }
+    return /* @__PURE__ */ p("host", { shadowDom: !0, focus: a.focus, children: /* @__PURE__ */ p(
+      dt,
+      {
+        ...e,
+        ...a,
+        type: "date",
+        value: t,
+        markToDate: r,
+        onSelect: u
+      }
+    ) });
+  },
+  { props: ht, styles: mt }
+);
+customElements.define("calendar-date", Ve);
+const Mt = (e, t) => b.compare(e, t) < 0 ? [e, t] : [t, e], tn = _(
+  (e) => {
+    const [t, n] = qe("value"), [s = t[0], o] = P("focusedDate"), r = yt({
+      ...e,
+      focusedDate: s,
+      setFocusedDate: o
+    }), a = N("rangestart"), u = N("rangeend"), [i, l] = P(
+      "tentative"
+    ), [c, d] = ct();
+    I(() => d(void 0), [i]);
+    function f(y) {
+      r.onFocus(y), m(y);
+    }
+    function m(y) {
+      y.stopPropagation(), i && d(y.detail);
+    }
+    function E(y) {
+      const h = y.detail;
+      y.stopPropagation(), i ? (n(Mt(i, h)), l(void 0), u(v(h)), r.dispatch()) : (l(h), a(v(h)));
+    }
+    const D = i ? Mt(i, c ?? i) : t;
+    return /* @__PURE__ */ p("host", { shadowDom: !0, focus: r.focus, children: /* @__PURE__ */ p(
+      dt,
+      {
+        ...e,
+        ...r,
+        type: "range",
+        value: D,
+        onFocus: f,
+        onHover: m,
+        onSelect: E
+      }
+    ) });
+  },
+  {
+    props: {
+      ...ht,
+      tentative: {
+        type: String,
+        value: ""
+      }
+    },
+    styles: mt
+  }
+);
+customElements.define("calendar-range", tn);
+const en = _(
+  (e) => {
+    const [t, n] = ze("value"), [s = t[0], o] = P("focusedDate"), r = yt({
+      ...e,
+      focusedDate: s,
+      setFocusedDate: o
+    });
+    function a(u) {
+      const i = [...t], l = t.findIndex((c) => c.equals(u.detail));
+      l < 0 ? i.push(u.detail) : i.splice(l, 1), n(i), r.dispatch();
+    }
+    return /* @__PURE__ */ p("host", { shadowDom: !0, focus: r.focus, children: /* @__PURE__ */ p(
+      dt,
+      {
+        ...e,
+        ...r,
+        type: "multi",
+        value: t,
+        onSelect: a
+      }
+    ) });
+  },
+  { props: ht, styles: mt }
+);
+customElements.define("calendar-multi", en);
+export {
+  Ve as CalendarDate,
+  Ze as CalendarMonth,
+  en as CalendarMulti,
+  tn as CalendarRange
+};

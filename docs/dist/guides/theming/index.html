@@ -1,0 +1,667 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Theming guide - Cally</title><!-- meta --><meta name="description" content="Learn how to style Cally's calendar components so that they fit in perfectly with your site or application."><meta property="og:title" content="Theming guide"><meta property="og:type" content="article"><meta property="og:url" content="https://wicky.nillia.ms/cally/guides/theming/"><meta property="og:image" content="https://wicky.nillia.ms/cally/og.png"><meta property="og:description" content="Learn how to style Cally's calendar components so that they fit in perfectly with your site or application."><meta property="og:site_name" content="Cally"><meta name="robots" content="index, follow"><meta name="theme-color" content="#dc2626"><link rel="stylesheet" href="/cally/_astro/calendar-date.1IoD4h1P.css">
+<style>code[data-astro-cid-rnxorbjd]{display:inline-flex;align-items:center;gap:var(--space-3xs);padding-block:0}span[data-astro-cid-rnxorbjd]{display:inline-block;inline-size:var(--space-xs);block-size:var(--space-xs);background-color:var(--color);border-radius:calc(var(--border-radius) - 1px);border:1px solid rgba(0,0,0,.2)}calendar-range{margin-inline:auto}
+.note[data-astro-cid-qg6lmfty]{--bg: #fff3bf;--border: #f0dbb4;background-color:var(--bg);border:1px solid var(--border);border-radius:5px;padding-inline:var(--space-s);padding-block:var(--space-xs);margin-block-end:var(--space-s)}.note[data-astro-cid-qg6lmfty] a{--a-color: #90500a}p[data-astro-cid-qg6lmfty]{margin:0}
+.intro[data-astro-cid-xdli4msg]{margin-block:var(--space-2xs) 0;font-size:var(--step-2);color:var(--color-intro);font-weight:300;line-height:1.3;letter-spacing:-.005em;text-wrap:pretty}
+a[data-astro-cid-u4qoyrkz]{--a-color: currentColor;text-decoration:none}.heading[data-astro-cid-u4qoyrkz]:target .hash[data-astro-cid-u4qoyrkz]{color:var(--color-accent);opacity:1}.hash[data-astro-cid-u4qoyrkz]{visibility:hidden;opacity:.5;padding-inline-start:var(--space-3xs)}a[data-astro-cid-u4qoyrkz]:is(:hover,:focus-visible) .hash[data-astro-cid-u4qoyrkz]{visibility:visible}
+.example[data-astro-cid-ctixdfsi]{--border: #dcdfe5;--bg: #f7f7f7;margin-block:var(--space-s) var(--space-l)}.example[data-astro-cid-ctixdfsi]:not(:first-child){margin-block-start:var(--space-l)}.preview[data-astro-cid-ctixdfsi]{border-block-start:1px solid var(--border);margin-inline:calc(var(--gutter) * -1);padding-inline:var(--space-s);padding-block:var(--space-m-l);background-color:var(--bg)}.code[data-astro-cid-ctixdfsi]{margin-block:0;padding-block:var(--space-m)}@media (min-width: 753px){.preview[data-astro-cid-ctixdfsi]{border-radius:5px 5px 0 0;border:1px solid var(--border);border-block-end:none}.code[data-astro-cid-ctixdfsi]{border-radius:0 0 5px 5px}}
+</style></head> <body class="container" data-astro-cid-sckkx6r4> <header data-astro-cid-wu5dj4rx> <div class="heading" data-astro-cid-wu5dj4rx> <a href="/cally/" class="h1 title" data-astro-cid-guvttfii="true">Cally</a> <nav data-astro-cid-s7jxfdyf> <ul data-astro-cid-s7jxfdyf> <li data-astro-cid-s7jxfdyf> <a href="https://github.com/WickyNilliams/cally" data-astro-cid-s7jxfdyf> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="presentation"> <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"></path> </svg> <span data-astro-cid-s7jxfdyf>Github</span> </a> </li> <li data-astro-cid-s7jxfdyf> <a href="https://twitter.com/WickyNilliams" data-astro-cid-s7jxfdyf> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="presentation"> <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path> </svg> <span data-astro-cid-s7jxfdyf>WickyNilliams</span> </a> </li> </ul> </nav>  </div>    <div class="intro" data-astro-cid-sckkx6r4> <h1>Theming</h1><p class="intro" data-astro-cid-xdli4msg>Learn how to style the components</p>  </div>  </header>  <main data-astro-cid-sckkx6r4>    <p>
+This serves as a general theming guide. Please read the respective
+<a href="/cally/components/">component API</a> docs to see all available styling
+    options.
+</p> <p>
+Out of the box, the components are not particularly pretty. This is
+    intentional. The goal is to provide <em>just enough</em> styles so that the components
+    are functional, and no more. Every style bundled with the components is potentially
+    a style you need to override or revert, and thus is wasted bytes.
+</p> <div class="example" data-astro-cid-ctixdfsi> <div class="preview" data-astro-cid-ctixdfsi>
+  
+  <div id="id-3601443324562932"> <calendar-range value="2024-01-10/2024-01-20" min="2024-01-01" max="2024-12-31" locale="en-GB" months="2"> <calendar-month></calendar-month> <calendar-month offset="1"></calendar-month> </calendar-range> </div>
+</div> <pre class="astro-code github-dark code" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-astro-cid-ctixdfsi data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">calendar-range</span></span>
+<span class="line"><span style="color:#B392F0">  value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-10/2024-01-20"</span></span>
+<span class="line"><span style="color:#B392F0">  min</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-01"</span></span>
+<span class="line"><span style="color:#B392F0">  max</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-12-31"</span></span>
+<span class="line"><span style="color:#B392F0">  locale</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"en-GB"</span></span>
+<span class="line"><span style="color:#B392F0">  months</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2"</span></span>
+<span class="line"><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#B392F0"> offset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"1"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">calendar-range</span><span style="color:#E1E4E8">></span></span></code></pre> </div>  <p>
+Thankfully, styling the components is not difficult. Let's make the above
+    example look nice.
+</p> <h2 class="heading" id="html" data-astro-cid-u4qoyrkz="true"> <a href="#html" data-astro-cid-u4qoyrkz> HTML<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h2>  <p>
+The first thing we want to do is stack the components horizontally if we
+    have space. Cally's components are designed to allow for flexible markup, so
+    we can add a grid around the <code>&lt;calendar-month&gt;</code> components. Additionally,
+    we can constrain the width of the
+<code>&lt;calendar-range&gt;</code> component to fit the content
+</p> <div class="example" data-astro-cid-ctixdfsi> <div class="preview" data-astro-cid-ctixdfsi>
+  <style> 
+      #id-6461741353624349 .grid {
+        display: flex;
+        gap: 1.5em;
+        flex-wrap: wrap;
+        justify-content: center;
+      }</style>
+  <div id="id-6461741353624349"> <calendar-range value="2024-01-10/2024-01-20" min="2024-01-01" max="2024-12-31" locale="en-GB" months="2"> <div class="grid"> <calendar-month></calendar-month> <calendar-month offset="1"></calendar-month> </div> </calendar-range> </div>
+</div> <pre class="astro-code github-dark code" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-astro-cid-ctixdfsi data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#B392F0">  .grid</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">flex</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    gap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.5</span><span style="color:#F97583">em</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    flex-wrap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">wrap</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    justify-content</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">center</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">calendar-range</span></span>
+<span class="line"><span style="color:#B392F0">  value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-10/2024-01-20"</span></span>
+<span class="line"><span style="color:#B392F0">  min</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-01"</span></span>
+<span class="line"><span style="color:#B392F0">  max</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-12-31"</span></span>
+<span class="line"><span style="color:#B392F0">  locale</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"en-GB"</span></span>
+<span class="line"><span style="color:#B392F0">  months</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2"</span></span>
+<span class="line"><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"grid"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#B392F0"> offset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"1"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">calendar-range</span><span style="color:#E1E4E8">></span></span></code></pre> </div>  <p>
+That's already much better. We use flexbox to wrap the components if there
+    is not enough space, but otherwise stack them horizontally.
+</p> <p>
+Next, let's replace the "Previous" and "Next" button text with icons. We can
+    do this with <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/slot">slots</a>. Slots are a way to pass content into a component from the outside. The
+<code>&lt;calendar-range&gt;</code> and <code>&lt;calendar-date&gt;</code> components
+    offer <code>previous</code> and <code>next</code> slots for this purpose.
+</p> <div class="note" data-astro-cid-qg6lmfty> <p data-astro-cid-qg6lmfty>  <strong>Note:</strong> for brevity we will use native
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting">CSS nesting</a>
+in these examples. This is a fairly new feature, and may not be supported in
+    all browsers.
+ </p> </div>  <div class="example" data-astro-cid-ctixdfsi> <div class="preview" data-astro-cid-ctixdfsi>
+  <style> 
+      #id-7350846604494057 .grid {
+        display: flex;
+        gap: 1.5em;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+:is(#id-7350846604494057 calendar-range) svg {
+          height: 16px;
+          width: 16px;
+          fill: none;
+          stroke: currentColor;
+          stroke-width: 1.5;
+        }
+:is(#id-7350846604494057 calendar-range) path {
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }</style>
+  <div id="id-7350846604494057"> <calendar-range value="2024-01-10/2024-01-20" min="2024-01-01" max="2024-12-31" locale="en-GB" months="2"> <svg aria-label="Previous" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M15.75 19.5 8.25 12l7.5-7.5"></path> </svg> <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path> </svg> <div class="grid"> <calendar-month></calendar-month> <calendar-month offset="1"></calendar-month> </div> </calendar-range> </div>
+</div> <pre class="astro-code github-dark code" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-astro-cid-ctixdfsi data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#B392F0">  .grid</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">flex</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    gap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.5</span><span style="color:#F97583">em</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    flex-wrap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">wrap</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    justify-content</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">center</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  calendar-range</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    svg</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">      height</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">16</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">16</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      fill</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">none</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">currentColor</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.5</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">    path</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-linecap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">round</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-linejoin</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">round</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">calendar-range</span></span>
+<span class="line"><span style="color:#B392F0">  value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-10/2024-01-20"</span></span>
+<span class="line"><span style="color:#B392F0">  min</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-01"</span></span>
+<span class="line"><span style="color:#B392F0">  max</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-12-31"</span></span>
+<span class="line"><span style="color:#B392F0">  locale</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"en-GB"</span></span>
+<span class="line"><span style="color:#B392F0">  months</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2"</span></span>
+<span class="line"><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">svg</span></span>
+<span class="line"><span style="color:#B392F0">    aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Previous"</span></span>
+<span class="line"><span style="color:#B392F0">    slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"previous"</span></span>
+<span class="line"><span style="color:#B392F0">    xmlns</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"http://www.w3.org/2000/svg"</span></span>
+<span class="line"><span style="color:#B392F0">    viewBox</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"0 0 24 24"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">path</span><span style="color:#B392F0"> d</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"M15.75 19.5 8.25 12l7.5-7.5"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">svg</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">svg</span></span>
+<span class="line"><span style="color:#B392F0">    aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Next"</span></span>
+<span class="line"><span style="color:#B392F0">    slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"next"</span></span>
+<span class="line"><span style="color:#B392F0">    xmlns</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"http://www.w3.org/2000/svg"</span></span>
+<span class="line"><span style="color:#B392F0">    viewBox</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"0 0 24 24"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">path</span><span style="color:#B392F0"> d</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"m8.25 4.5 7.5 7.5-7.5 7.5"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">svg</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"grid"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#B392F0"> offset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"1"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">calendar-range</span><span style="color:#E1E4E8">></span></span></code></pre> </div>  <p>
+Since we are replacing the "Previous"/"Next" text, we need to add some kind
+    of label back in ourselves. We can do this with an
+<code>aria-label</code> attribute on the SVGs.
+</p> <h2 class="heading" id="css" data-astro-cid-u4qoyrkz="true"> <a href="#css" data-astro-cid-u4qoyrkz> CSS<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h2>  <p>
+Cally's components can be themed and styled via CSS
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part">parts</a> and
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*">custom properties</a>. This allows for both coarse and fine-grained styling. If these are new
+    concepts to you, please read the linked MDN docs.
+</p> <h3 class="heading" id="css-custom-properties" data-astro-cid-u4qoyrkz="true"> <a href="#css-custom-properties" data-astro-cid-u4qoyrkz> CSS Custom properties<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h3>  <p>
+Custom properties are for coarse-grained styling. There are only a few
+    custom properties available, and they relate to accent colors (likely your
+    brand color). Let's imagine our brand color is
+<code data-astro-cid-rnxorbjd>#7048e8<span style="--color:#7048e8" data-astro-cid-rnxorbjd></span></code> . For ideal contrast, we will use
+<code data-astro-cid-rnxorbjd>#ffffff<span style="--color:#ffffff" data-astro-cid-rnxorbjd></span></code>  for text on this color.
+</p> <div class="example" data-astro-cid-ctixdfsi> <div class="preview" data-astro-cid-ctixdfsi>
+  <style> 
+      #id-3609765762570352 .grid {
+        display: flex;
+        gap: 1.5em;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+:is(#id-3609765762570352 calendar-range) svg {
+          height: 16px;
+          width: 16px;
+          fill: none;
+          stroke: currentColor;
+          stroke-width: 1.5;
+        }
+:is(#id-3609765762570352 calendar-range) path {
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+#id-3609765762570352 calendar-month {
+        --color-accent: #7048e8;
+        --color-text-on-accent: #ffffff;
+      }</style>
+  <div id="id-3609765762570352"> <calendar-range value="2024-01-10/2024-01-20" min="2024-01-01" max="2024-12-31" locale="en-GB" months="2"> <svg aria-label="Previous" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M15.75 19.5 8.25 12l7.5-7.5"></path> </svg> <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path> </svg> <div class="grid"> <calendar-month></calendar-month> <calendar-month offset="1"></calendar-month> </div> </calendar-range> </div>
+</div> <pre class="astro-code github-dark code" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-astro-cid-ctixdfsi data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#B392F0">  .grid</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">flex</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    gap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.5</span><span style="color:#F97583">em</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    flex-wrap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">wrap</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    justify-content</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">center</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  calendar-range</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    svg</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">      height</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">16</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">16</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      fill</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">none</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">currentColor</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.5</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">    path</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-linecap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">round</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-linejoin</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">round</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  calendar-month</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">    --color-accent</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#7048e8</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    --color-text-on-accent</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#ffffff</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">calendar-range</span></span>
+<span class="line"><span style="color:#B392F0">  value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-10/2024-01-20"</span></span>
+<span class="line"><span style="color:#B392F0">  min</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-01"</span></span>
+<span class="line"><span style="color:#B392F0">  max</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-12-31"</span></span>
+<span class="line"><span style="color:#B392F0">  locale</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"en-GB"</span></span>
+<span class="line"><span style="color:#B392F0">  months</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2"</span></span>
+<span class="line"><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">svg</span></span>
+<span class="line"><span style="color:#B392F0">    aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Previous"</span></span>
+<span class="line"><span style="color:#B392F0">    slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"previous"</span></span>
+<span class="line"><span style="color:#B392F0">    xmlns</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"http://www.w3.org/2000/svg"</span></span>
+<span class="line"><span style="color:#B392F0">    viewBox</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"0 0 24 24"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">path</span><span style="color:#B392F0"> d</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"M15.75 19.5 8.25 12l7.5-7.5"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">svg</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">svg</span></span>
+<span class="line"><span style="color:#B392F0">    aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Next"</span></span>
+<span class="line"><span style="color:#B392F0">    slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"next"</span></span>
+<span class="line"><span style="color:#B392F0">    xmlns</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"http://www.w3.org/2000/svg"</span></span>
+<span class="line"><span style="color:#B392F0">    viewBox</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"0 0 24 24"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">path</span><span style="color:#B392F0"> d</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"m8.25 4.5 7.5 7.5-7.5 7.5"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">svg</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"grid"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#B392F0"> offset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"1"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">calendar-range</span><span style="color:#E1E4E8">></span></span></code></pre> </div>  <h3 class="heading" id="css-parts" data-astro-cid-u4qoyrkz="true"> <a href="#css-parts" data-astro-cid-u4qoyrkz> CSS Parts<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h3>  <p>
+CSS parts are for fine-grained styling. Only certain elements are exposed as
+    a part. An element may have multiple parts, and a part may be used on
+    multiple elements. Parts may be added or removed conditionally, depending on
+    the state of the component. Parts can be used in isolation or combined.
+</p> <p>
+Each component offers many parts. Please consult the
+<a href="/cally/components/">component API</a> docs for the complete list.
+</p> <p>
+Let's style the previous and next buttons first. These can be targeted via
+    the <code>button</code> part. Additionally, the previous and next buttons have
+<code>previous</code> and <code>next</code> parts, should you wish to style them
+    differently.
+</p> <div class="example" data-astro-cid-ctixdfsi> <div class="preview" data-astro-cid-ctixdfsi>
+  <style> 
+    #id-2929650749232717 .grid {
+      display: flex;
+      gap: 1.5em;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+:is(#id-2929650749232717 calendar-range) svg {
+        height: 16px;
+        width: 16px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.5;
+      }
+:is(#id-2929650749232717 calendar-range) path {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+:is(#id-2929650749232717 calendar-range)::part(button) {
+        border: 1px solid #adb5bd;
+        background-color: #fff;
+        border-radius: 3px;
+        width: 26px;
+        height: 26px;
+      }
+:is(#id-2929650749232717 calendar-range)::part(button):focus-visible {
+        outline: 2px solid #7048e8;
+      }
+#id-2929650749232717 calendar-month {
+      --color-accent: #7048e8;
+      --color-text-on-accent: #ffffff;
+    }</style>
+  <div id="id-2929650749232717"> <calendar-range value="2024-01-10/2024-01-20" min="2024-01-01" max="2024-12-31" locale="en-GB" months="2"> <svg aria-label="Previous" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M15.75 19.5 8.25 12l7.5-7.5"></path> </svg> <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path> </svg> <div class="grid"> <calendar-month></calendar-month> <calendar-month offset="1"></calendar-month> </div> </calendar-range> </div>
+</div> <pre class="astro-code github-dark code" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-astro-cid-ctixdfsi data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#B392F0">  .grid</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">flex</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    gap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.5</span><span style="color:#F97583">em</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    flex-wrap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">wrap</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    justify-content</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">center</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  calendar-range</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    svg</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">      height</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">16</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">16</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      fill</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">none</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">currentColor</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.5</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">    path</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-linecap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">round</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-linejoin</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">round</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">      border</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#F97583">px</span><span style="color:#79B8FF"> solid</span><span style="color:#79B8FF"> #adb5bd</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      background-color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#fff</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      border-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">26</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      height</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">26</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">)</span><span style="color:#B392F0">:focus-visible</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">      outline</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#F97583">px</span><span style="color:#79B8FF"> solid</span><span style="color:#79B8FF"> #7048e8</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  calendar-month</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">    --color-accent</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#7048e8</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    --color-text-on-accent</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#ffffff</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">calendar-range</span></span>
+<span class="line"><span style="color:#B392F0">  value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-10/2024-01-20"</span></span>
+<span class="line"><span style="color:#B392F0">  min</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-01"</span></span>
+<span class="line"><span style="color:#B392F0">  max</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-12-31"</span></span>
+<span class="line"><span style="color:#B392F0">  locale</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"en-GB"</span></span>
+<span class="line"><span style="color:#B392F0">  months</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2"</span></span>
+<span class="line"><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">svg</span></span>
+<span class="line"><span style="color:#B392F0">    aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Previous"</span></span>
+<span class="line"><span style="color:#B392F0">    slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"previous"</span></span>
+<span class="line"><span style="color:#B392F0">    xmlns</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"http://www.w3.org/2000/svg"</span></span>
+<span class="line"><span style="color:#B392F0">    viewBox</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"0 0 24 24"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">path</span><span style="color:#B392F0"> d</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"M15.75 19.5 8.25 12l7.5-7.5"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">svg</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">svg</span></span>
+<span class="line"><span style="color:#B392F0">    aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Next"</span></span>
+<span class="line"><span style="color:#B392F0">    slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"next"</span></span>
+<span class="line"><span style="color:#B392F0">    xmlns</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"http://www.w3.org/2000/svg"</span></span>
+<span class="line"><span style="color:#B392F0">    viewBox</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"0 0 24 24"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">path</span><span style="color:#B392F0"> d</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"m8.25 4.5 7.5 7.5-7.5 7.5"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">svg</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"grid"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#B392F0"> offset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"1"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">calendar-range</span><span style="color:#E1E4E8">></span></span></code></pre> </div>  <p>
+Things are starting to look good. Notice that parts can be combined with
+    pseudo-classes like <code>:focus-visible</code>.
+</p> <p>
+Now let's add some final tweaks. Perhaps we want rounded corners for the
+    start and end of the range.
+</p> <div class="example" data-astro-cid-ctixdfsi> <div class="preview" data-astro-cid-ctixdfsi>
+  <style> 
+      #id-7533000506953415 .grid {
+        display: flex;
+        gap: 1.5em;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+:is(#id-7533000506953415 calendar-range) svg {
+          height: 16px;
+          width: 16px;
+          fill: none;
+          stroke: currentColor;
+          stroke-width: 1.5;
+        }
+:is(#id-7533000506953415 calendar-range) path {
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+:is(#id-7533000506953415 calendar-range)::part(button) {
+          border: 1px solid #adb5bd;
+          background-color: #fff;
+          border-radius: 3px;
+          width: 26px;
+          height: 26px;
+        }
+:is(#id-7533000506953415 calendar-range)::part(button):focus-visible {
+          outline: 2px solid #7048e8;
+        }
+#id-7533000506953415 calendar-month {
+        --color-accent: #7048e8;
+        --color-text-on-accent: #ffffff;
+      }
+:is(#id-7533000506953415 calendar-month)::part(button) {
+          border-radius: 3px;
+        }
+:is(#id-7533000506953415 calendar-month)::part(range-inner) {
+          border-radius: 0;
+        }
+:is(#id-7533000506953415 calendar-month)::part(range-start) {
+          border-start-end-radius: 0;
+          border-end-end-radius: 0;
+        }
+:is(#id-7533000506953415 calendar-month)::part(range-end) {
+          border-start-start-radius: 0;
+          border-end-start-radius: 0;
+        }
+:is(#id-7533000506953415 calendar-month)::part(range-start range-end) {
+          border-radius: 3px;
+        }</style>
+  <div id="id-7533000506953415"> <calendar-range value="2024-01-10/2024-01-20" min="2024-01-01" max="2024-12-31" locale="en-GB" months="2"> <svg aria-label="Previous" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M15.75 19.5 8.25 12l7.5-7.5"></path> </svg> <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path> </svg> <div class="grid"> <calendar-month></calendar-month> <calendar-month offset="1"></calendar-month> </div> </calendar-range> </div>
+</div> <pre class="astro-code github-dark code" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-astro-cid-ctixdfsi data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#B392F0">  .grid</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">flex</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    gap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.5</span><span style="color:#F97583">em</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    flex-wrap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">wrap</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    justify-content</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">center</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  calendar-range</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    svg</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">      height</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">16</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">16</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      fill</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">none</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">currentColor</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.5</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">    path</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-linecap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">round</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-linejoin</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">round</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">      border</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#F97583">px</span><span style="color:#79B8FF"> solid</span><span style="color:#79B8FF"> #adb5bd</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      background-color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#fff</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      border-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">26</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      height</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">26</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">)</span><span style="color:#B392F0">:focus-visible</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">      outline</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#F97583">px</span><span style="color:#79B8FF"> solid</span><span style="color:#79B8FF"> #7048e8</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  calendar-month</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">    --color-accent</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#7048e8</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    --color-text-on-accent</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#ffffff</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(button) {</span></span>
+<span class="line"><span style="color:#79B8FF">      border-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">range-inner</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">      border-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">range-start</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">      border-start-end-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      border-end-end-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">range-end</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">      border-start-start-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      border-end-start-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">range-start</span><span style="color:#85E89D"> range-end</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">      border-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">calendar-range</span></span>
+<span class="line"><span style="color:#B392F0">  value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-10/2024-01-20"</span></span>
+<span class="line"><span style="color:#B392F0">  min</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-01"</span></span>
+<span class="line"><span style="color:#B392F0">  max</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-12-31"</span></span>
+<span class="line"><span style="color:#B392F0">  locale</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"en-GB"</span></span>
+<span class="line"><span style="color:#B392F0">  months</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2"</span></span>
+<span class="line"><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">svg</span></span>
+<span class="line"><span style="color:#B392F0">    aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Previous"</span></span>
+<span class="line"><span style="color:#B392F0">    slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"previous"</span></span>
+<span class="line"><span style="color:#B392F0">    xmlns</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"http://www.w3.org/2000/svg"</span></span>
+<span class="line"><span style="color:#B392F0">    viewBox</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"0 0 24 24"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">path</span><span style="color:#B392F0"> d</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"M15.75 19.5 8.25 12l7.5-7.5"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">svg</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">svg</span></span>
+<span class="line"><span style="color:#B392F0">    aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Next"</span></span>
+<span class="line"><span style="color:#B392F0">    slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"next"</span></span>
+<span class="line"><span style="color:#B392F0">    xmlns</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"http://www.w3.org/2000/svg"</span></span>
+<span class="line"><span style="color:#B392F0">    viewBox</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"0 0 24 24"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">path</span><span style="color:#B392F0"> d</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"m8.25 4.5 7.5 7.5-7.5 7.5"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">svg</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"grid"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#B392F0"> offset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"1"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">calendar-range</span><span style="color:#E1E4E8">></span></span></code></pre> </div>  <div class="note" data-astro-cid-qg6lmfty> <p data-astro-cid-qg6lmfty> 
+If you're wondering about <code>border-end-end-radius</code> and other strange
+    looking CSS properties, these are <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values">logical properties</a>. Logical properties make your code tolerant to changes in writing
+    direction, simplifying localization efforts
+ </p> </div>  <p>
+And finally, let's use a slightly different shade
+<code data-astro-cid-rnxorbjd>#845ef7<span style="--color:#845ef7" data-astro-cid-rnxorbjd></span></code>  for the inner parts of the range:
+</p> <div class="example" data-astro-cid-ctixdfsi> <div class="preview" data-astro-cid-ctixdfsi>
+  <style> 
+      #id-7117090882259487 .grid {
+        display: flex;
+        gap: 1.5em;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+:is(#id-7117090882259487 calendar-range) svg {
+          height: 16px;
+          width: 16px;
+          fill: none;
+          stroke: currentColor;
+          stroke-width: 1.5;
+        }
+:is(#id-7117090882259487 calendar-range) path {
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+:is(#id-7117090882259487 calendar-range)::part(button) {
+          border: 1px solid #adb5bd;
+          background-color: #fff;
+          border-radius: 3px;
+          width: 26px;
+          height: 26px;
+        }
+:is(#id-7117090882259487 calendar-range)::part(button):focus-visible {
+          outline: 2px solid #7048e8;
+        }
+#id-7117090882259487 calendar-month {
+        --color-accent: #7048e8;
+        --color-text-on-accent: #ffffff;
+      }
+:is(#id-7117090882259487 calendar-month)::part(button) {
+          border-radius: 3px;
+        }
+:is(#id-7117090882259487 calendar-month)::part(range-inner) {
+          border-radius: 0;
+          background-color: #845ef7;
+        }
+:is(#id-7117090882259487 calendar-month)::part(range-start) {
+          border-start-end-radius: 0;
+          border-end-end-radius: 0;
+        }
+:is(#id-7117090882259487 calendar-month)::part(range-end) {
+          border-start-start-radius: 0;
+          border-end-start-radius: 0;
+        }
+:is(#id-7117090882259487 calendar-month)::part(range-start range-end) {
+          border-radius: 3px;
+        }</style>
+  <div id="id-7117090882259487"> <calendar-range value="2024-01-10/2024-01-20" min="2024-01-01" max="2024-12-31" locale="en-GB" months="2"> <svg aria-label="Previous" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M15.75 19.5 8.25 12l7.5-7.5"></path> </svg> <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path> </svg> <div class="grid"> <calendar-month></calendar-month> <calendar-month offset="1"></calendar-month> </div> </calendar-range> </div>
+</div> <pre class="astro-code github-dark code" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-astro-cid-ctixdfsi data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#B392F0">  .grid</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">flex</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    gap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.5</span><span style="color:#F97583">em</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    flex-wrap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">wrap</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    justify-content</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">center</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  calendar-range</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    svg</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">      height</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">16</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">16</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      fill</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">none</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">currentColor</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1.5</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">    path</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-linecap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">round</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      stroke-linejoin</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">round</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">      border</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#F97583">px</span><span style="color:#79B8FF"> solid</span><span style="color:#79B8FF"> #adb5bd</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      background-color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#fff</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      border-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">26</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      height</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">26</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">button</span><span style="color:#E1E4E8">)</span><span style="color:#B392F0">:focus-visible</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">      outline</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#F97583">px</span><span style="color:#79B8FF"> solid</span><span style="color:#79B8FF"> #7048e8</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#85E89D">  calendar-month</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">    --color-accent</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#7048e8</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">    --color-text-on-accent</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#ffffff</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(button) {</span></span>
+<span class="line"><span style="color:#79B8FF">      border-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">range-inner</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">      border-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      background-color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#845ef7</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">range-start</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">      border-start-end-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      border-end-end-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">range-end</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">      border-start-start-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">      border-end-start-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">    &#x26;::part(</span><span style="color:#85E89D">range-start</span><span style="color:#85E89D"> range-end</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">      border-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">3</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">calendar-range</span></span>
+<span class="line"><span style="color:#B392F0">  value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-10/2024-01-20"</span></span>
+<span class="line"><span style="color:#B392F0">  min</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-01"</span></span>
+<span class="line"><span style="color:#B392F0">  max</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-12-31"</span></span>
+<span class="line"><span style="color:#B392F0">  locale</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"en-GB"</span></span>
+<span class="line"><span style="color:#B392F0">  months</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2"</span></span>
+<span class="line"><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">svg</span></span>
+<span class="line"><span style="color:#B392F0">    aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Previous"</span></span>
+<span class="line"><span style="color:#B392F0">    slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"previous"</span></span>
+<span class="line"><span style="color:#B392F0">    xmlns</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"http://www.w3.org/2000/svg"</span></span>
+<span class="line"><span style="color:#B392F0">    viewBox</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"0 0 24 24"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">path</span><span style="color:#B392F0"> d</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"M15.75 19.5 8.25 12l7.5-7.5"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">svg</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">svg</span></span>
+<span class="line"><span style="color:#B392F0">    aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Next"</span></span>
+<span class="line"><span style="color:#B392F0">    slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"next"</span></span>
+<span class="line"><span style="color:#B392F0">    xmlns</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"http://www.w3.org/2000/svg"</span></span>
+<span class="line"><span style="color:#B392F0">    viewBox</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"0 0 24 24"</span></span>
+<span class="line"><span style="color:#E1E4E8">  ></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">path</span><span style="color:#B392F0"> d</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"m8.25 4.5 7.5 7.5-7.5 7.5"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">svg</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"grid"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#B392F0"> offset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"1"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">calendar-range</span><span style="color:#E1E4E8">></span></span></code></pre> </div>  <h2 class="heading" id="finally" data-astro-cid-u4qoyrkz="true"> <a href="#finally" data-astro-cid-u4qoyrkz> Finally<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h2>  <p>
+We've taken the components from their default unattractive state to
+    something that looks much nicer. We've used a combination of HTML, CSS
+    custom properties, CSS parts, and SVGs to achieve this. You can take this as
+    far as you wish, or perhaps with a little tweaking this is enough for your
+    needs.
+</p> <p>
+We haven't paid any mind to mobile styles throughout this guide. On mobile,
+    perhaps you'd want to only show one month at a time. Or render an overlay
+    rather than a popup. These decisions are beyond the scope of this guide, and
+    are left as an exercise for the reader.
+</p> <p>
+To find out more about each component, please see the respective
+<a href="/cally/components/">component API</a> docs. Or visit the
+<a href="/cally/guides/usage/">usage</a> guide for an in-depth look at how to
+    use Cally with existing components.
+</p>  </main> <footer class="footer" data-astro-cid-sckkx6r4="true" data-astro-cid-w3csb3e3> <p data-astro-cid-w3csb3e3> 
+Built by <a href="https://wicky.nillia.ms/" data-astro-cid-sckkx6r4>Nick Williams</a>  </p> </footer>  <script type="module" src="/cally/_astro/Layout.astro_astro_type_script_index_0_lang.DNrpVIOX.js"></script> </body></html> 

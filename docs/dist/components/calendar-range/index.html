@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>&lt;calendar-range&gt; API - Cally</title><!-- meta --><meta name="description" content="The calendar-range component is used to select a date range. Find out how to use its properties, methods, events, and styling options."><meta property="og:title" content="<calendar-range> API"><meta property="og:type" content="article"><meta property="og:url" content="https://wicky.nillia.ms/cally/components/calendar-range/"><meta property="og:image" content="https://wicky.nillia.ms/cally/og.png"><meta property="og:description" content="The calendar-range component is used to select a date range. Find out how to use its properties, methods, events, and styling options."><meta property="og:site_name" content="Cally"><meta name="robots" content="index, follow"><meta name="theme-color" content="#dc2626"><link rel="stylesheet" href="/cally/_astro/calendar-date.1IoD4h1P.css">
+<style>h1[data-astro-cid-hnecgxtf]{margin-block-start:var(--space-m)}table[data-astro-cid-akey4rtz]{border-collapse:collapse;min-inline-size:var(--container-size)}table[data-astro-cid-akey4rtz] th,td{padding-block:var(--space-xs);padding-inline:var(--space-2xs)}table[data-astro-cid-akey4rtz] td{border-block-end:1px solid var(--color-border);vertical-align:top}table[data-astro-cid-akey4rtz] th{text-align:start;font-weight:500;border-block-end:1px solid var(--color-heading)}table[data-astro-cid-akey4rtz] :is(td,th):first-child{padding-inline-start:0}table[data-astro-cid-akey4rtz] :is(td,th):last-child{padding-inline-end:0}.scroll-x[data-astro-cid-akey4rtz]{overflow-x:auto}
+a[data-astro-cid-u4qoyrkz]{--a-color: currentColor;text-decoration:none}.heading[data-astro-cid-u4qoyrkz]:target .hash[data-astro-cid-u4qoyrkz]{color:var(--color-accent);opacity:1}.hash[data-astro-cid-u4qoyrkz]{visibility:hidden;opacity:.5;padding-inline-start:var(--space-3xs)}a[data-astro-cid-u4qoyrkz]:is(:hover,:focus-visible) .hash[data-astro-cid-u4qoyrkz]{visibility:visible}
+calendar-range{margin-inline:auto}
+.example[data-astro-cid-ctixdfsi]{--border: #dcdfe5;--bg: #f7f7f7;margin-block:var(--space-s) var(--space-l)}.example[data-astro-cid-ctixdfsi]:not(:first-child){margin-block-start:var(--space-l)}.preview[data-astro-cid-ctixdfsi]{border-block-start:1px solid var(--border);margin-inline:calc(var(--gutter) * -1);padding-inline:var(--space-s);padding-block:var(--space-m-l);background-color:var(--bg)}.code[data-astro-cid-ctixdfsi]{margin-block:0;padding-block:var(--space-m)}@media (min-width: 753px){.preview[data-astro-cid-ctixdfsi]{border-radius:5px 5px 0 0;border:1px solid var(--border);border-block-end:none}.code[data-astro-cid-ctixdfsi]{border-radius:0 0 5px 5px}}
+</style></head> <body class="container" data-astro-cid-sckkx6r4> <header data-astro-cid-wu5dj4rx> <div class="heading" data-astro-cid-wu5dj4rx> <a href="/cally/" class="h1 title" data-astro-cid-guvttfii="true">Cally</a> <nav data-astro-cid-s7jxfdyf> <ul data-astro-cid-s7jxfdyf> <li data-astro-cid-s7jxfdyf> <a href="https://github.com/WickyNilliams/cally" data-astro-cid-s7jxfdyf> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="presentation"> <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"></path> </svg> <span data-astro-cid-s7jxfdyf>Github</span> </a> </li> <li data-astro-cid-s7jxfdyf> <a href="https://twitter.com/WickyNilliams" data-astro-cid-s7jxfdyf> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="presentation"> <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path> </svg> <span data-astro-cid-s7jxfdyf>WickyNilliams</span> </a> </li> </ul> </nav>  </div>    <div class="intro" data-astro-cid-sckkx6r4> <h1 data-astro-cid-hnecgxtf><code data-astro-cid-hnecgxtf>&lt;calendar-range&gt;</code></h1> </div>  </header>  <main data-astro-cid-sckkx6r4>    <p>
+This component, combined with
+<a href="/cally/components/calendar-month/"><code>&lt;calendar-month&gt;</code></a>, is used to select a date range. It shows one or more months at a time.
+</p> <div class="example" data-astro-cid-ctixdfsi> <div class="preview" data-astro-cid-ctixdfsi>
+  
+  <div id="id-2918245319450424"> <calendar-range value="2024-01-10/2024-01-20" min="2024-01-01" max="2024-12-31" locale="en-GB"> <calendar-month></calendar-month> </calendar-range> </div>
+</div> <pre class="astro-code github-dark code" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-astro-cid-ctixdfsi data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">calendar-range</span></span>
+<span class="line"><span style="color:#B392F0">  value</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-10/2024-01-20"</span></span>
+<span class="line"><span style="color:#B392F0">  min</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-01-01"</span></span>
+<span class="line"><span style="color:#B392F0">  max</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2024-12-31"</span></span>
+<span class="line"><span style="color:#B392F0">  locale</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"en-GB"</span></span>
+<span class="line"><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">calendar-range</span><span style="color:#E1E4E8">></span></span></code></pre> </div>  <h2 class="heading" id="properties-and-attributes" data-astro-cid-u4qoyrkz="true"> <a href="#properties-and-attributes" data-astro-cid-u4qoyrkz> Properties and attributes<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h2>  <p>
+The <code>value</code> property is expected in ISO-8601 range format (<code>YYYY-MM-DD/YYYY-MM-DD</code>). All other dates are expected in ISO-8601 format (<code>YYYY-MM-DD</code>).
+</p> <div class="scroll-x" data-astro-cid-akey4rtz> <table data-astro-cid-akey4rtz> <thead data-astro-cid-akey4rtz> <tr> <th>Property</th> <th>Attribute</th> <th>Description</th> <th>Type</th> <th>Default</th> </tr> </thead> <tbody data-astro-cid-akey4rtz>   <tr> <td><code>value</code></td> <td><code>value</code></td> <td>The currently selected range</td> <td><code>string</code></td> <td><code>""</code></td> </tr> <tr> <td><code>min</code></td> <td><code>min</code></td> <td>The earliest date that can be selected</td> <td><code>string</code></td> <td><code>""</code></td> </tr> <tr> <td><code>max</code></td> <td><code>max</code></td> <td>The latest date that can be selected</td> <td><code>string</code></td> <td><code>""</code></td> </tr> <tr> <td><code>today</code></td> <td><code>today</code></td> <td>The date that is considered today</td> <td><code>string</code></td> <td><code>""</code></td> </tr> <tr> <td><code>focusedDate</code></td> <td><code>focused-date</code></td> <td>The date that is considered "focused" by the calendar</td> <td><code>string</code></td> <td><code>undefined</code></td> </tr> <tr> <td><code>tentative</code></td> <td><code>tentative</code></td> <td>
+The date that is tentatively selected e.g. the start of a range
+        selection
+</td> <td><code>string</code></td> <td><code>""</code></td> </tr> <tr> <td><code>firstDayOfWeek</code></td> <td><code>first-day-of-week</code></td> <td>
+The first day of the week, where Sunday is <code>0</code>, Monday is
+<code>1</code>, etc
+</td> <td><code>number</code></td> <td><code>1</code></td> </tr> <tr> <td><code>showOutsideDays</code></td> <td><code>show-outside-days</code></td> <td>Whether to show days outside the month</td> <td><code>boolean</code></td> <td><code>false</code></td> </tr> <tr> <td><code>locale</code></td> <td><code>locale</code></td> <td>
+The locale for formatting dates. If not set, will use the browser's
+        locale
+</td> <td><code>string | undefined</code></td> <td><code>undefined</code></td> </tr> <tr> <td><code>months</code></td> <td><code>months</code></td> <td>The number of months to display per page</td> <td><code>number</code></td> <td><code>1</code></td> </tr> <tr> <td><code>pageBy</code></td> <td><code>page-by</code></td> <td>
+Whether next and previous should move by number of <code>months</code> or
+        by a single month at a time
+</td> <td><code>"months" | "single"</code></td> <td><code>"months"</code></td> </tr> <tr> <td><code>formatWeekday</code></td> <td><code>format-weekday</code></td> <td>
+Controls the format of the weekday headers in the month table
+</td> <td><code>"narrow" | "short"</code></td> <td><code>"narrow"</code></td> </tr> <tr> <td><code>isDateDisallowed</code></td> <td>-</td> <td>
+A function that takes a date and returns <code>true</code> if the date should
+        not be selectable
+</td> <td><code>(date: Date) =&gt; boolean</code></td> <td><code>() =&gt; false</code></td> </tr> <tr> <td><code>getDayParts</code></td> <td>-</td> <td>
+A function that takes a date and returns a string of CSS parts, allowing
+        custom styling for individual dates
+</td> <td><code>(date: Date) =&gt; string</code></td> <td><code>() =&gt; ""</code></td> </tr>  </tbody> </table> </div>  <h2 class="heading" id="events" data-astro-cid-u4qoyrkz="true"> <a href="#events" data-astro-cid-u4qoyrkz> Events<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h2>  <p>
+Emits non-bubbling <code>CustomEvents</code> in response to user interaction.
+</p> <div class="scroll-x" data-astro-cid-akey4rtz> <table data-astro-cid-akey4rtz> <thead data-astro-cid-akey4rtz> <tr> <th>Name</th> <th>Description</th> <th>Type</th> </tr> </thead> <tbody data-astro-cid-akey4rtz>   <tr> <td><code>change</code></td> <td>
+Emitted when the <code>value</code> changes via user interaction. Not emitted
+        when <code>value</code> is programmatically changed
+</td> <td><code>Event</code></td> </tr> <tr> <td><code>focusday</code></td> <td>
+Emitted when the currently focused day changes. This can happen via
+        keyboard commands, or clicking the next or previous buttons
+</td> <td><code>CustomEvent&lt;Date&gt;</code></td> </tr> <tr> <td><code>rangestart</code></td> <td>Emitted when the user starts selecting a range</td> <td><code>CustomEvent&lt;Date&gt;</code></td> </tr> <tr> <td><code>rangeend</code></td> <td>Emitted when the user finished selections a range</td> <td><code>CustomEvent&lt;Date&gt;</code></td> </tr>  </tbody> </table> </div>  <h2 class="heading" id="methods" data-astro-cid-u4qoyrkz="true"> <a href="#methods" data-astro-cid-u4qoyrkz> Methods<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h2>  <div class="scroll-x" data-astro-cid-akey4rtz> <table data-astro-cid-akey4rtz> <thead data-astro-cid-akey4rtz> <tr> <th>Name</th> <th>Parameters</th> <th>Description</th> </tr> </thead> <tbody data-astro-cid-akey4rtz>   <tr> <td> <code>
+focus(options?: FocusOptions & { target: "previous" | "next" | "day"
+}) => void
+</code> </td> <td><code>options</code> - controls what gets focused, and how</td> <td>
+Focuses the <code>&lt;calendar-month&gt;</code> containing the currently
+        focused date. <code>option.target</code> controls which part of the component
+        gets focused
+</td> </tr>  </tbody> </table> </div>  <h2 class="heading" id="css-parts" data-astro-cid-u4qoyrkz="true"> <a href="#css-parts" data-astro-cid-u4qoyrkz> CSS Parts<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h2>  <p>
+CSS parts allow for fine-grained styling and theming. They target specific
+    elements inside the component. An element may have multiple parts, and a
+    part may be used on multiple elements. They can be used in isolation, or
+    combined.
+</p> <p>
+See the guide on <a href="/cally/guides/theming/">theming</a> for a walkthrough
+    of how to style this component.
+</p> <div class="scroll-x" data-astro-cid-akey4rtz> <table data-astro-cid-akey4rtz> <thead data-astro-cid-akey4rtz> <tr> <th>Name</th> <th>Description</th> </tr> </thead> <tbody data-astro-cid-akey4rtz>   <tr> <td><code>container</code></td> <td>The container for the entire component</td> </tr> <tr> <td><code>header</code></td> <td>The container for <code>heading</code> and <code>button</code>s</td> </tr> <tr> <td><code>button</code></td> <td>Any button within the component</td> </tr> <tr> <td><code>previous</code></td> <td>The previous page <code>button</code></td> </tr> <tr> <td><code>next</code></td> <td>The next page <code>button</code></td> </tr> <tr> <td><code>disabled</code></td> <td>A <code>button</code> that is disabled due to min/max</td> </tr> <tr> <td><code>heading</code></td> <td>The heading that labels the calendar</td> </tr>  </tbody> </table> </div>  <h2 class="heading" id="slots" data-astro-cid-u4qoyrkz="true"> <a href="#slots" data-astro-cid-u4qoyrkz> Slots<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h2>  <div class="scroll-x" data-astro-cid-akey4rtz> <table data-astro-cid-akey4rtz> <thead data-astro-cid-akey4rtz> <tr> <th>Name</th> <th>Description</th> </tr> </thead> <tbody data-astro-cid-akey4rtz>   <tr> <td>Default slot</td> <td>
+The default slot is where you place your
+<code>&lt;calendar-month&gt;</code> components, along with any other markup.
+        Note <code>&lt;calendar-month&gt;</code> does not need to be a direct descendant
+</td> </tr> <tr> <td><code>previous</code></td> <td>
+The inner content of the previous page button. By default uses text
+        "Previous". You will likely want to slot an icon here
+</td> </tr> <tr> <td><code>next</code></td> <td>
+The inner content of the next page button. By default uses text "Next".
+        You will likely want to slot an icon here
+</td> </tr> <tr> <td><code>heading</code></td> <td>
+By default displays the visible heading for the component. You may want
+        to replace this with a year select. A separate visually-hidden heading
+        is always rendered for accessibility purposes
+</td> </tr>  </tbody> </table> </div>    </main> <footer class="footer" data-astro-cid-sckkx6r4="true" data-astro-cid-w3csb3e3> <p data-astro-cid-w3csb3e3> 
+Built by <a href="https://wicky.nillia.ms/" data-astro-cid-sckkx6r4>Nick Williams</a>  </p> </footer>  <script type="module" src="/cally/_astro/Layout.astro_astro_type_script_index_0_lang.DNrpVIOX.js"></script> </body></html>  

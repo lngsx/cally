@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Cally: small, feature-rich calendar components</title><!-- meta --><meta name="description" content="Open source calendar components for selecting single dates or date ranges. Framework-agnostic, themeable, localizable, accessible."><meta property="og:title" content="Cally: small, feature-rich calendar components"><meta property="og:type" content="website"><meta property="og:url" content="https://wicky.nillia.ms/cally/"><meta property="og:image" content="https://wicky.nillia.ms/cally/og.png"><meta property="og:description" content="Open source calendar components for selecting single dates or date ranges. Framework-agnostic, themeable, localizable, accessible."><meta property="og:site_name" content="Cally"><meta name="robots" content="index, follow"><meta name="theme-color" content="#dc2626"><link rel="stylesheet" href="/cally/_astro/calendar-date.1IoD4h1P.css">
+<style>.intro[data-astro-cid-xdli4msg]{margin-block:var(--space-2xs) 0;font-size:var(--step-2);color:var(--color-intro);font-weight:300;line-height:1.3;letter-spacing:-.005em;text-wrap:pretty}
+a[data-astro-cid-u4qoyrkz]{--a-color: currentColor;text-decoration:none}.heading[data-astro-cid-u4qoyrkz]:target .hash[data-astro-cid-u4qoyrkz]{color:var(--color-accent);opacity:1}.hash[data-astro-cid-u4qoyrkz]{visibility:hidden;opacity:.5;padding-inline-start:var(--space-3xs)}a[data-astro-cid-u4qoyrkz]:is(:hover,:focus-visible) .hash[data-astro-cid-u4qoyrkz]{visibility:visible}
+.card{--border: #dcdfe5;--radius: 4px;--icon-color: #666;--accent: var(--color-accent);padding:var(--space-m-l);border-radius:5px;border:1px solid var(--border);background:#fff;box-shadow:0 1px 5px #0000000d,0 0 30px #00000003;inline-size:fit-content;margin-inline:auto}.card .grid{display:flex;gap:1em;justify-content:center;flex-wrap:wrap}:is(.card calendar-range) svg{height:16px;width:16px;fill:none;stroke:var(--icon-color);stroke-width:1.5}:is(.card calendar-range) path{stroke-linecap:round;stroke-linejoin:round}:is(.card calendar-range)::part(button){width:30px;height:30px;border:1px solid var(--border);background:#fff;color:var(--icon-color);border-radius:var(--radius)}:is(.card calendar-range)::part(button):is(:hover,:focus-visible){--icon-color: black}:is(.card calendar-range)::part(button):hover{background:#00000005}:is(.card calendar-range)::part(button):focus-visible{outline:2px solid var(--accent);outline-offset:-1px}.card calendar-month{--color-accent: var(--accent)}:is(.card calendar-month)::part(button){border-radius:var(--radius)}:is(.card calendar-month)::part(today){color:var(--color-accent)}:is(.card calendar-month)::part(today selected),:is(.card calendar-month)::part(today):focus-visible{color:#fff}:is(.card calendar-month)::part(range-inner){border-radius:0}:is(.card calendar-month)::part(range-start){border-start-end-radius:0;border-end-end-radius:0}:is(.card calendar-month)::part(range-end){border-start-start-radius:0;border-end-start-radius:0}:is(.card calendar-month)::part(range-start range-end){border-radius:var(--radius)}.feature{container-type:inline-size}.card{transition:opacity .6s ease-in,transform .4s ease-out;min-block-size:667px}@container (inline-size > 562px){.card{min-block-size:425px}}.card:not(.reveal){opacity:0}@media (prefers-reduced-motion: no-preference){.card:not(.reveal){transform:translateY(-3em)}}calendar-date,calendar-range,calendar-multi{margin:0 auto}
+.example[data-astro-cid-ctixdfsi]{--border: #dcdfe5;--bg: #f7f7f7;margin-block:var(--space-s) var(--space-l)}.example[data-astro-cid-ctixdfsi]:not(:first-child){margin-block-start:var(--space-l)}.preview[data-astro-cid-ctixdfsi]{border-block-start:1px solid var(--border);margin-inline:calc(var(--gutter) * -1);padding-inline:var(--space-s);padding-block:var(--space-m-l);background-color:var(--bg)}.code[data-astro-cid-ctixdfsi]{margin-block:0;padding-block:var(--space-m)}@media (min-width: 753px){.preview[data-astro-cid-ctixdfsi]{border-radius:5px 5px 0 0;border:1px solid var(--border);border-block-end:none}.code[data-astro-cid-ctixdfsi]{border-radius:0 0 5px 5px}}
+</style></head> <body class="container" data-astro-cid-sckkx6r4> <header data-astro-cid-wu5dj4rx> <div class="heading" data-astro-cid-wu5dj4rx> <h1 class="h1 title" data-astro-cid-guvttfii>Cally</h1> <nav data-astro-cid-s7jxfdyf> <ul data-astro-cid-s7jxfdyf> <li data-astro-cid-s7jxfdyf> <a href="https://github.com/WickyNilliams/cally" data-astro-cid-s7jxfdyf> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="presentation"> <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"></path> </svg> <span data-astro-cid-s7jxfdyf>Github</span> </a> </li> <li data-astro-cid-s7jxfdyf> <a href="https://twitter.com/WickyNilliams" data-astro-cid-s7jxfdyf> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="presentation"> <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path> </svg> <span data-astro-cid-s7jxfdyf>WickyNilliams</span> </a> </li> </ul> </nav>  </div>    <div class="intro" data-astro-cid-sckkx6r4> <p class="intro" data-astro-cid-xdli4msg>Small, feature-rich calendar components</p>  </div>  </header>  <main data-astro-cid-sckkx6r4>   <div class="example feature" data-astro-cid-ctixdfsi> <div class="preview" data-astro-cid-ctixdfsi>
+  
+  <div id="id-7020145079542951"> <div class="card"> <calendar-range months="2"> <svg aria-label="Previous" slot="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M15.75 19.5 8.25 12l7.5-7.5"></path> </svg> <svg aria-label="Next" slot="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path> </svg> <div class="grid"> <calendar-month></calendar-month> <calendar-month offset="1"></calendar-month> </div> </calendar-range> </div>  </div>
+</div> <pre class="astro-code github-dark code" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-astro-cid-ctixdfsi data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"card"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">calendar-range</span><span style="color:#B392F0"> months</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">svg</span></span>
+<span class="line"><span style="color:#B392F0">      aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Previous"</span></span>
+<span class="line"><span style="color:#B392F0">      slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"previous"</span></span>
+<span class="line"><span style="color:#B392F0">      xmlns</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"http://www.w3.org/2000/svg"</span></span>
+<span class="line"><span style="color:#B392F0">      viewBox</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"0 0 24 24"</span></span>
+<span class="line"><span style="color:#E1E4E8">    ></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">path</span><span style="color:#B392F0"> d</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"M15.75 19.5 8.25 12l7.5-7.5"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">svg</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">svg</span></span>
+<span class="line"><span style="color:#B392F0">      aria-label</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Next"</span></span>
+<span class="line"><span style="color:#B392F0">      slot</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"next"</span></span>
+<span class="line"><span style="color:#B392F0">      xmlns</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"http://www.w3.org/2000/svg"</span></span>
+<span class="line"><span style="color:#B392F0">      viewBox</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"0 0 24 24"</span></span>
+<span class="line"><span style="color:#E1E4E8">    ></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">path</span><span style="color:#B392F0"> d</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"m8.25 4.5 7.5 7.5-7.5 7.5"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">path</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">svg</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"grid"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">      &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#B392F0"> offset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"1"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">calendar-range</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span></code></pre> </div>   <script type="module">
+  const toISO = (date) => date.toISOString().split("T")[0];
+
+  // pick some dates mid-month
+  const today = new Date();
+  const start = new Date(today.getUTCFullYear(), today.getUTCMonth(), 8);
+  const end = new Date(today.getUTCFullYear(), today.getUTCMonth(), 16);
+
+  document
+    .querySelector("calendar-range")
+    ?.setAttribute("value", `${toISO(start)}/${toISO(end)}`);
+
+  await Promise.all([
+    customElements.whenDefined("calendar-range"),
+    customElements.whenDefined("calendar-month"),
+  ]);
+
+  document.querySelector(".card")?.classList.add("reveal");
+</script> <h2 class="heading" id="goals" data-astro-cid-u4qoyrkz="true"> <a href="#goals" data-astro-cid-u4qoyrkz> Goals<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h2>  <ul> <li><strong>Small bundle size</strong> - less than 9KB min/gzip</li> <li> <strong>Full feature set</strong> - single dates, multiple dates, ranges, display
+      multiple months
+</li> <li> <strong>HTML-friendly</strong> - easy to author, framework-independent
+</li> <li> <strong>Minimal dependencies</strong> - only one
+</li> <li><strong>Accessible</strong> - keyboard and screen reader</li> <li> <strong>Localizable</strong> - <code>Intl.DateTimeFormat</code>, CSS
+      logical properties, RTL support
+</li> <li> <strong>Themeable</strong> - CSS parts and custom properties to offer flexibility
+      and power
+</li> <li> <strong>Composable</strong> - impose no DOM specific structure, play well with
+      others
+</li> </ul> <p>
+The aim is not to give you a full date picker, instead only the lower-level
+    building blocks that allow you to build your own. You likely already have
+    your own inputs, buttons, popover etc components. So why not use them?
+</p> <p>
+By making minimal assumptions about how the components will look and
+    function, we can keep the bundle size small without compromising on
+    functionality or ability to customize.
+</p> <h2 class="heading" id="installation" data-astro-cid-u4qoyrkz="true"> <a href="#installation" data-astro-cid-u4qoyrkz> Installation<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h2>  <p>
+In the simplest scenario, include a script tag in your HTML page. The
+    components are then immediately available for use. For example, using unpkg:
+</p> <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">script</span><span style="color:#B392F0"> type</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"module"</span><span style="color:#B392F0"> src</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"https://unpkg.com/cally"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">script</span><span style="color:#E1E4E8">></span></span></code></pre> <p>
+Alternatively, you can install the package via npm or your preferred package
+    manager:
+</p> <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> cally</span></span></code></pre> <p>
+Then import the components into your JavaScript or TypeScript file. For
+    example, using ES modules:
+</p> <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#9ECBFF"> "cally"</span><span style="color:#E1E4E8">;</span></span></code></pre> <h2 class="heading" id="quick-start" data-astro-cid-u4qoyrkz="true"> <a href="#quick-start" data-astro-cid-u4qoyrkz> Quick start<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h2>  <p>
+Assuming you have followed the installation instructions, the next step is
+    to put the components to use.
+</p> <h3 class="heading" id="single-date" data-astro-cid-u4qoyrkz="true"> <a href="#single-date" data-astro-cid-u4qoyrkz> Single date<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h3>  <p>
+For a single date, use the <code>&lt;calendar-date&gt;</code> component, and place
+    inside it a <code>&lt;calendar-month&gt;</code> component.
+</p> <div class="example" data-astro-cid-ctixdfsi> <div class="preview" data-astro-cid-ctixdfsi>
+  
+  <div id="id-5511269205783903"> <calendar-date> <calendar-month></calendar-month> </calendar-date> </div>
+</div> <pre class="astro-code github-dark code" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-astro-cid-ctixdfsi data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">calendar-date</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">calendar-date</span><span style="color:#E1E4E8">></span></span></code></pre> </div>  <h3 class="heading" id="date-range" data-astro-cid-u4qoyrkz="true"> <a href="#date-range" data-astro-cid-u4qoyrkz> Date range<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h3> 
+For a date range, use the <code>&lt;calendar-range&gt;</code> component, and place
+  inside it a <code>&lt;calendar-month&gt;</code> component.
+<div class="example" data-astro-cid-ctixdfsi> <div class="preview" data-astro-cid-ctixdfsi>
+  
+  <div id="id-6451826863402429"> <calendar-range> <calendar-month></calendar-month> </calendar-range> </div>
+</div> <pre class="astro-code github-dark code" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-astro-cid-ctixdfsi data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">calendar-range</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">calendar-range</span><span style="color:#E1E4E8">></span></span></code></pre> </div>  <h3 class="heading" id="multiple-dates" data-astro-cid-u4qoyrkz="true"> <a href="#multiple-dates" data-astro-cid-u4qoyrkz> Multiple dates<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h3> 
+For a date range, use the <code>&lt;calendar-multi&gt;</code> component, and place
+  inside it a <code>&lt;calendar-month&gt;</code> component.
+<div class="example" data-astro-cid-ctixdfsi> <div class="preview" data-astro-cid-ctixdfsi>
+  
+  <div id="id-6879921922670109"> <calendar-multi> <calendar-month></calendar-month> </calendar-multi> </div>
+</div> <pre class="astro-code github-dark code" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-astro-cid-ctixdfsi data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">calendar-multi</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">calendar-multi</span><span style="color:#E1E4E8">></span></span></code></pre> </div>  <h3 class="heading" id="multiple-months" data-astro-cid-u4qoyrkz="true"> <a href="#multiple-months" data-astro-cid-u4qoyrkz> Multiple months<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h3>  <p>
+To display multiple months, add more <code>&lt;calendar-month&gt;</code> components
+    inside <code>&lt;calendar-range&gt;</code> or <code>&lt;calendar-date&gt;</code>
+components. You must set the <code>months</code> attribute of the range and date
+    calendars to the number of months you will display. Then configure the
+<code>offset</code> attribute of each <code>&lt;calendar-month&gt;</code> to specify
+    the month it represents relative to the first visible month.
+</p> <p>
+By default, the <code>&lt;calendar-month&gt;</code> components will stack vertically.
+    You will likely want to use flexbox or css grid to improve the layout as seen
+    below.
+</p> <div class="example" data-astro-cid-ctixdfsi> <div class="preview" data-astro-cid-ctixdfsi>
+  <style> 
+      #id-4269118813603280 .grid {
+        display: flex;
+        gap: 1em;
+        justify-content: center;
+        flex-wrap: wrap;
+      }</style>
+  <div id="id-4269118813603280"> <calendar-range months="2"> <div class="grid"> <calendar-month></calendar-month> <calendar-month offset="1"></calendar-month> </div> </calendar-range> </div>
+</div> <pre class="astro-code github-dark code" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-astro-cid-ctixdfsi data-language="html"><code><span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#B392F0">  .grid</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">flex</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    gap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#F97583">em</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    justify-content</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">center</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    flex-wrap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">wrap</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">style</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">calendar-range</span><span style="color:#B392F0"> months</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"2"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"grid"</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    &#x3C;</span><span style="color:#85E89D">calendar-month</span><span style="color:#B392F0"> offset</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"1"</span><span style="color:#E1E4E8">>&#x3C;/</span><span style="color:#85E89D">calendar-month</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">  &#x3C;/</span><span style="color:#85E89D">div</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">calendar-range</span><span style="color:#E1E4E8">></span></span></code></pre> </div>  <h2 class="heading" id="next-steps" data-astro-cid-u4qoyrkz="true"> <a href="#next-steps" data-astro-cid-u4qoyrkz> Next steps<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h2>  <p>
+For a detailed look at each component, check out the respective
+<a href="/cally/components/">component API</a> docs. The
+<a href="/cally/guides/">guides</a> section offers walkthroughs on
+<a href="/cally/guides/theming/">theming</a>,
+<a href="/cally/guides/frameworks/">framework integration</a>, and
+<a href="/cally/guides/usage/">usage with existing components</a>.
+</p> <p>
+If you are evaluating accessibility, please read the
+<a href="/cally/accessibility/">accessibility statement</a> to understand how
+    these components work, how they have been tested, and any known issues.
+</p> <p>
+If you have an issue or feature request, please open an issue in the
+<a href="https://github.com/WickyNilliams/cally">repository</a>.
+</p> <h2 class="heading" id="acknowledgments" data-astro-cid-u4qoyrkz="true"> <a href="#acknowledgments" data-astro-cid-u4qoyrkz> Acknowledgments<span class="hash" aria-hidden="true" data-astro-cid-u4qoyrkz>#</span> </a> </h2>  <p>
+Cally is a spiritual successor to my earlier work on
+<a href="https://duetds.github.io/date-picker/">Duet date picker</a>. Shout
+    out to everyone that made it possible to open source that. The component
+    APIs are partially inspired by the Date and Time components from <a href="https://react-spectrum.adobe.com/react-aria/components.html#date-and-time">React ARIA Components</a>, though there is some amount of convergent evolution. Much appreciation to
+<a href="https://stream7.github.io/">Nikos Gereoudakis</a> for transferring ownership
+    of the <code>cally</code> package on npm. And finally, thanks to
+<a href="https://twitter.com/Uppercod">@Uppercod</a> for his work on
+<a href="https://atomicojs.dev/">Atomico</a>.
+</p>  </main> <footer class="footer" data-astro-cid-sckkx6r4="true" data-astro-cid-w3csb3e3> <p data-astro-cid-w3csb3e3> 
+Built by <a href="https://wicky.nillia.ms/" data-astro-cid-sckkx6r4>Nick Williams</a>  </p> </footer>  <script type="module" src="/cally/_astro/Layout.astro_astro_type_script_index_0_lang.DNrpVIOX.js"></script> </body></html> 

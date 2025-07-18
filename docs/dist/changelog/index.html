@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Changelog - Cally</title><!-- meta --><meta name="description"><meta property="og:title" content="Changelog"><meta property="og:type" content="article"><meta property="og:url" content="https://wicky.nillia.ms/cally/changelog/"><meta property="og:image" content="https://wicky.nillia.ms/cally/og.png"><meta property="og:description"><meta property="og:site_name" content="Cally"><meta name="robots" content="index, follow"><meta name="theme-color" content="#dc2626"><link rel="stylesheet" href="/cally/_astro/calendar-date.1IoD4h1P.css">
+<style>a{--a-color: currentColor;text-decoration:none}h2:target a{color:var(--color-accent);opacity:1}h2 a{visibility:hidden;opacity:.5;padding-inline-start:var(--space-3xs)}h2:is(:hover,:focus-visible) a{visibility:visible}h3{margin-block-start:var(--space-m)}
+</style></head> <body class="container" data-astro-cid-sckkx6r4> <header data-astro-cid-wu5dj4rx> <div class="heading" data-astro-cid-wu5dj4rx> <a href="/cally/" class="h1 title" data-astro-cid-guvttfii="true">Cally</a> <nav data-astro-cid-s7jxfdyf> <ul data-astro-cid-s7jxfdyf> <li data-astro-cid-s7jxfdyf> <a href="https://github.com/WickyNilliams/cally" data-astro-cid-s7jxfdyf> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="presentation"> <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"></path> </svg> <span data-astro-cid-s7jxfdyf>Github</span> </a> </li> <li data-astro-cid-s7jxfdyf> <a href="https://twitter.com/WickyNilliams" data-astro-cid-s7jxfdyf> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="presentation"> <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path> </svg> <span data-astro-cid-s7jxfdyf>WickyNilliams</span> </a> </li> </ul> </nav>  </div>    <div class="intro" data-astro-cid-sckkx6r4>  </div>  </header>  <main data-astro-cid-sckkx6r4>  <h1 id="changelog">Changelog</h1>
+<p>All notable changes to this project will be documented in this file.</p>
+<p>The format is based on <a href="https://keepachangelog.com/en/1.1.0/">Keep a Changelog</a>,
+and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<h2 id="080"><code>0.8.0</code><a aria-hidden="true" tabindex="-1" href="#080"><span class="hash">#</span></a></h2>
+<p><em>Released: 2025-02-08</em></p>
+<h3 id="added">Added</h3>
+<ul>
+<li><code>getDayParts</code> option to <code>&#x3C;calendar-date></code>, <code>&#x3C;calendar-range></code>, and <code>&#x3C;calendar-multi></code> components.</li>
+<li><code>target</code> option to <code>focus()</code> on <code>&#x3C;calendar-date></code>, <code>&#x3C;calendar-range></code>, <code>&#x3C;calendar-multi></code> components.</li>
+<li><code>format-weekday</code> attribute/<code>formatWeekday</code> property to <code>&#x3C;calendar-date></code>, <code>&#x3C;calendar-range></code>, and <code>&#x3C;calendar-multi></code> components.</li>
+<li><code>today</code> attribute/property on <code>&#x3C;calendar-date></code>, <code>&#x3C;calendar-range></code>, and <code>&#x3C;calendar-multi></code> components.</li>
+<li><code>day-0</code>, <code>day-1</code>, etc CSS parts corresponding to day number on <code>&#x3C;calendar-month></code>.</li>
+</ul>
+<h2 id="072"><code>0.7.2</code><a aria-hidden="true" tabindex="-1" href="#072"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-11-01</em></p>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Use user’s timezone for calculating today, not UTC.</li>
+</ul>
+<h2 id="071"><code>0.7.1</code><a aria-hidden="true" tabindex="-1" href="#071"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-06-05</em></p>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li>Edge cases in pagination logic.</li>
+</ul>
+<h2 id="070"><code>0.7.0</code><a aria-hidden="true" tabindex="-1" href="#070"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-06-04</em></p>
+<h3 id="added-1">Added</h3>
+<ul>
+<li><code>page-by</code> attribute/<code>pageBy</code> property to <code>&#x3C;calendar-date></code>, <code>&#x3C;calendar-range></code>, and <code>&#x3C;calendar-multi></code> components.</li>
+<li><code>tentative</code> attribute/property to <code>&#x3C;calendar-range></code> component.</li>
+</ul>
+<h2 id="061"><code>0.6.1</code><a aria-hidden="true" tabindex="-1" href="#061"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-05-23</em></p>
+<h3 id="fixed-2">Fixed</h3>
+<ul>
+<li>Use UTC-based methods on <code>Date</code> when getting day names.</li>
+</ul>
+<h2 id="060"><code>0.6.0</code><a aria-hidden="true" tabindex="-1" href="#060"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-05-10</em></p>
+<h3 id="added-2">Added</h3>
+<ul>
+<li><code>&#x3C;calendar-multi></code> component.</li>
+<li><code>heading</code> slot for <code>&#x3C;calendar-date></code>, <code>&#x3C;calendar-range></code>, and <code>&#x3C;calendar-multi></code> components.</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>Hover styles for disallowed dates</li>
+</ul>
+<h2 id="053"><code>0.5.3</code><a aria-hidden="true" tabindex="-1" href="#053"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-04-25</em></p>
+<h3 id="fixed-3">Fixed</h3>
+<ul>
+<li>Reinstate missing <code>disallowed</code> and <code>today</code> CSS parts.</li>
+</ul>
+<h2 id="052"><code>0.5.2</code><a aria-hidden="true" tabindex="-1" href="#052"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-04-22</em></p>
+<h3 id="fixed-4">Fixed</h3>
+<ul>
+<li><code>&#x3C;calendar-range></code> handle empty <code>value</code> prop.</li>
+</ul>
+<h2 id="051"><code>0.5.1</code><a aria-hidden="true" tabindex="-1" href="#051"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-04-20</em></p>
+<h3 id="fixed-5">Fixed</h3>
+<ul>
+<li>Reinstate missing <code>outside</code> CSS part.</li>
+</ul>
+<h2 id="050"><code>0.5.0</code><a aria-hidden="true" tabindex="-1" href="#050"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-04-18</em></p>
+<h3 id="added-3">Added</h3>
+<ul>
+<li><code>focused-date</code> attribute / <code>focusedDate</code> property to <code>&#x3C;calendar-date></code> and <code>&#x3C;calendar-range></code> components.</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Bundle size improvements.</li>
+</ul>
+<h2 id="043"><code>0.4.3</code><a aria-hidden="true" tabindex="-1" href="#043"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-04-05</em></p>
+<h3 id="fixed-6">Fixed</h3>
+<ul>
+<li>Use UTC timezone for formatting day names.</li>
+</ul>
+<h2 id="042"><code>0.4.2</code><a aria-hidden="true" tabindex="-1" href="#042"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-04-04</em></p>
+<h3 id="fixed-7">Fixed</h3>
+<ul>
+<li>Use UTC timezone for formatting dates.</li>
+</ul>
+<h2 id="041"><code>0.4.1</code><a aria-hidden="true" tabindex="-1" href="#041"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-04-04</em></p>
+<h3 id="fixed-8">Fixed</h3>
+<ul>
+<li>Styles for iOS devices</li>
+</ul>
+<h2 id="040"><code>0.4.0</code><a aria-hidden="true" tabindex="-1" href="#040"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-04-02</em></p>
+<h3 id="added-4">Added</h3>
+<ul>
+<li><code>container</code> and <code>header</code> CSS parts to date and range components.</li>
+<li><code>rangestart</code> and <code>rangeend</code> events to <code>&#x3C;calendar-range></code> component.</li>
+</ul>
+<h3 id="changed-1">Changed</h3>
+<ul>
+<li>Rename <code>button-next</code> and <code>button-previous</code> slots to <code>next</code> and <code>previous</code>.</li>
+<li>When and where <code>focusday</code> event gets fired.</li>
+<li>Finalized accessibility statement.</li>
+<li>Reuse common visually-hidden CSS styles.</li>
+</ul>
+<h3 id="fixed-9">Fixed</h3>
+<ul>
+<li>Table header accessible names.</li>
+<li>Range selection with screen reader virtual cursor.</li>
+<li>Font size in buttons.</li>
+<li>Screen reader announcement for range/date groups.</li>
+</ul>
+<h2 id="030"><code>0.3.0</code><a aria-hidden="true" tabindex="-1" href="#030"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-03-26</em></p>
+<h3 id="added-5">Added</h3>
+<ul>
+<li>Typescript types.</li>
+<li>Miscellaneous tweaks and polish.</li>
+</ul>
+<h2 id="020"><code>0.2.0</code><a aria-hidden="true" tabindex="-1" href="#020"><span class="hash">#</span></a></h2>
+<p><em>Released: 2024-03-21</em></p>
+<p>Initial release</p>
+<h3 id="added-6">Added</h3>
+<ul>
+<li><code>&#x3C;calendar-date></code>, <code>&#x3C;calendar-range></code>, and <code>&#x3C;calendar-month></code> components.</li>
+<li>Astro-based docs site.</li>
+</ul>  </main> <footer class="footer" data-astro-cid-sckkx6r4="true" data-astro-cid-w3csb3e3> <p data-astro-cid-w3csb3e3> 
+Built by <a href="https://wicky.nillia.ms/" data-astro-cid-sckkx6r4>Nick Williams</a>  </p> </footer>  <script type="module" src="/cally/_astro/Layout.astro_astro_type_script_index_0_lang.DNrpVIOX.js"></script> </body></html> 
