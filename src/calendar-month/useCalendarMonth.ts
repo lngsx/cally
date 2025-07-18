@@ -7,6 +7,7 @@ import {
   startOfWeek,
   toDate,
   getToday,
+  isDateBetween
 } from "../utils/date.js";
 import type { PlainDate } from "../utils/temporal.js";
 import type { CalendarContextValue } from "./CalendarMonthContext.js";
@@ -139,6 +140,13 @@ export function useCalendarMonth({ props, context }: UseCalendarMonthOptions) {
       isSelected = context.value.some((d) => d.equals(date));
     } else {
       isSelected = context.value?.equals(date);
+
+      // markToDate
+      if (context.type === "date" && context.markToDate && context.value) {
+        if (isDateBetween(date, context.value, context.markToDate)) {
+          isSelected = true;
+        }
+      }
     }
 
     // prettier-ignore

@@ -19,6 +19,7 @@ interface CalendarContextBase {
 export interface CalendarDateContext extends CalendarContextBase {
   type: "date";
   value?: PlainDate;
+  markToDate?: PlainDate;
 }
 
 export interface CalendarRangeContext extends CalendarContextBase {

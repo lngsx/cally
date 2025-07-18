@@ -82,3 +82,20 @@ interface DateLike {
 export function toDate(date: DateLike): Date {
   return new Date(Date.UTC(date.year, date.month - 1, date.day ?? 1));
 }
+
+/**
+ * Checks if a date falls between two dates
+ */
+export function isDateBetween(
+  date: PlainDate,
+  start: PlainDate,
+  end: PlainDate
+): boolean {
+  // Between start and end (start <= date <= end)
+  const startToEndRange = PlainDate.compare(start, date) <= 0 && PlainDate.compare(date, end) <= 0;
+  
+  // Between end and start (end <= date <= start)
+  const endToStartRange = PlainDate.compare(end, date) <= 0 && PlainDate.compare(date, start) <= 0;
+  
+  return startToEndRange || endToStartRange;
+}

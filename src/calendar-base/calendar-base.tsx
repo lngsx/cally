@@ -132,6 +132,10 @@ export const props = {
     type: String,
     value: (): Pagination => "months",
   },
+  markToDate: {
+    type: String,
+    value: "",
+  },
 };
 
 export const styles = [

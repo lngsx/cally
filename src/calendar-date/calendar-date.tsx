@@ -17,6 +17,8 @@ export const CalendarDate = c(
   }> => {
     const [value, setValue] = useDateProp("value");
     const [focusedDate = value, setFocusedDate] = useDateProp("focusedDate");
+    const [markToDate] = useDateProp("markToDate");
+
     const calendar = useCalendarBase({
       ...props,
       focusedDate,
@@ -35,6 +37,7 @@ export const CalendarDate = c(
           {...calendar}
           type="date"
           value={value}
+          markToDate={markToDate}
           onSelect={handleSelect}
         />
       </host>
